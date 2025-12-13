@@ -14,7 +14,7 @@ export function Linked() {
 
   return (
     <>
-      <div className="grid grid-rows gap-4 pt-4">
+      <div className="grid grid-rows gap-4 pt-4 px-28">
         {[1, 2].map((_, i) => (
           <div
             key={i}

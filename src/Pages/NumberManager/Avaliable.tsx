@@ -3,7 +3,7 @@ import { IoCloseOutline } from "react-icons/io5";
 export function Avaliable() {
   return (
     <>
-      <div className="pt-6">
+      <div className="pt-6 px-28">
         <h1 className="text-2xl font-extrabold font-serif text-zinc-100">
           Números Disponíveis
         </h1>

@@ -1,10 +1,9 @@
 // import { Button } from "../components/ui/button";
 // import { GiStripedSun } from "react-icons/gi";
 
-
 export function Navbar() {
   return (
-    <>
+    <div className="px-28 py-7">
       {/* titulo e subtitulo */}
       <div className="pb-7 flex justify-between">
         <section>
@@ -39,6 +38,6 @@ export function Navbar() {
           <p className="ps-3 font-serif text-zinc-400">Numeros Livres</p>
         </div>
       </div>
-    </>
+    </div>
   );
 }

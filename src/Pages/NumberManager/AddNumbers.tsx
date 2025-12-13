@@ -4,7 +4,7 @@ import { IoIosAdd } from "react-icons/io";
 export function AddNumbers() {
   return (
     <>
-      <div className="flex justify-between gap-2 pt-6">
+      <div className="flex justify-between gap-2 px-28">
         <h1 className="text-2xl font-extrabold font-serif text-zinc-100 mt-1">
           Números Vinculados
         </h1>
