@@ -1,8 +1,12 @@
-import { Navbar } from "./Pages/NumberManager/Navbar";
-import { Search } from "./Pages/NumberManager/Search";
-import { Avaliable } from "./Pages/NumberManager/Avaliable";
-import { Linked } from "./Pages/NumberManager/Linked";
-import { AddNumbers } from "./Pages/NumberManager/AddNumbers";
+// Importaçoes da pagina de number manager
+import { Navbar } from "./NumberManager/NavbarNumber";
+import { Avaliable } from "./NumberManager/Avaliable";
+import { LinkedWithSearch } from "./NumberManager/LinkedWithSearch";
+import { AddNumbers } from "./NumberManager/AddNumbers";
+// importaçoes da pagina de gym managar
+import { NavbarGym } from "./GymManager/NavbarGym";
+// import { AddGym } from "./GymManager/AddGym";
+import { CompletedGyms } from "./GymManager/CompletedGyms";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./components/ui/tabs";
 
 function App() {
@@ -18,11 +22,14 @@ function App() {
         <TabsContent value="NumberManager">
           <Navbar />
           <AddNumbers />
-          <Search />
-          <Linked />
+          <LinkedWithSearch/>
           <Avaliable />
         </TabsContent>
-        <TabsContent value="GymManager"></TabsContent>
+        <TabsContent value="GymManager">
+          <NavbarGym/>
+          {/* <AddGym/> */}
+          <CompletedGyms/>
+        </TabsContent>
       </Tabs>
     </div>
   );
