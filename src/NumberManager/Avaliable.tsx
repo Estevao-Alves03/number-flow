@@ -96,119 +96,136 @@ export function Avaliable() {
         Clique em um número para vincular
       </p>
 
-      {/* ===== LISTA ===== */}
-      <div className="grid grid-cols-3 gap-4 pt-4">
-        {paginatedNumbers.map((item) => (
-          <div
-            key={item.id}
-            className="relative px-10 py-8 bg-slate-800/50 border border-slate-700 rounded-lg hover:scale-105 transition"
-            onClick={() => setOpenCard(item.id)}
-          >
-            {openCard === item.id ? (
-              <div onClick={(e) => e.stopPropagation()}>
-                <h1 className="text-xl text-zinc-100">
-                  {item.number}
-                </h1>
-
-                <form className="flex flex-col gap-2 mt-4">
-                  <label className="text-zinc-400">Empresa</label>
-                  <input
-                    value={nameGym}
-                    placeholder="Digite o nome da empresa"
-                    onChange={(e) => setNameGym(e.target.value)}
-                    className="px-2 py-1 rounded bg-slate-800 border border-slate-500 text-zinc-100"
-                  />
-
-                  <label className="text-zinc-400">CNPJ</label>
-                  <input
-                    value={cnpj}
-                    placeholder="00.000.000/0000-00"
-                    onChange={(e) =>
-                      setCnpj(formatCnpj(e.target.value))
-                    }
-                    className="px-2 py-1 rounded bg-slate-800 border border-slate-500 text-zinc-100"
-                  />
-
-                  <label className="text-zinc-400">Implantador</label>
-                  <Select onValueChange={setDeployer}>
-                    <SelectTrigger className="bg-slate-800 border border-slate-500">
-                      <SelectValue placeholder="Selecione" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectGroup>
-                        <SelectItem value="João">João</SelectItem>
-                        <SelectItem value="Rayck">Rayck</SelectItem>
-                        <SelectItem value="Ellias">Ellias</SelectItem>
-                      </SelectGroup>
-                    </SelectContent>
-                  </Select>
-                </form>
-
-                <div className="grid grid-cols-2 gap-2 mt-4">
-                  <Button
-                    disabled={!isValidForm()}
-                    onClick={() => handleLink(item.id)}
-                  >
-                    <IoCheckmarkSharp /> Vincular
-                  </Button>
-
-                  <Button
-                    variant="secondary"
-                    onClick={() => setOpenCard(null)}
-                  >
-                    <IoCloseOutline /> Cancelar
-                  </Button>
-                </div>
-              </div>
-            ) : (
-              <div className="relative text-center">
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setConfirmDeleteId(item.id);
-                  }}
-                  className="absolute right-2 top-2 text-zinc-400 hover:text-red-500"
-                >
-                  <IoCloseOutline size={18} />
-                </button>
-
-                <h1 className="text-xl text-zinc-100">
-                  {item.number}
-                </h1>
-                <p className="text-xs text-zinc-400">
-                  Clique para vincular
-                </p>
-              </div>
-            )}
+      {/* ===== EMPTY STATE ===== */}
+      {availableNumbers.length === 0 ? (
+        <div className="pt-8">
+          <div className="border border-slate-700 rounded-lg py-16 text-center text-zinc-400 bg-slate-800/30">
+            <h2 className="text-xl font-semibold mb-2">
+              Nenhum número disponível
+            </h2>
+            <p className="text-sm">
+              Todos os números já estão vinculados ou ainda não foram
+              cadastrados.
+            </p>
           </div>
-        ))}
-      </div>
-
-      {/* ===== PAGINAÇÃO ===== */}
-      {totalPages > 1 && (
-        <div className="flex justify-center items-center gap-4 pt-8">
-          <button
-            onClick={() => setPage((p) => Math.max(p - 1, 1))}
-            disabled={page === 1}
-            className="px-4 py-1 rounded bg-slate-700 text-zinc-100 disabled:opacity-40"
-          >
-            Anterior
-          </button>
-
-          <span className="text-sm text-zinc-400">
-            Página {page} de {totalPages}
-          </span>
-
-          <button
-            onClick={() =>
-              setPage((p) => Math.min(p + 1, totalPages))
-            }
-            disabled={page === totalPages}
-            className="px-4 py-1 rounded bg-slate-700 text-zinc-100 disabled:opacity-40"
-          >
-            Próxima
-          </button>
         </div>
+      ) : (
+        <>
+          {/* ===== LISTA ===== */}
+          <div className="grid grid-cols-3 gap-4 pt-4">
+            {paginatedNumbers.map((item) => (
+              <div
+                key={item.id}
+                className="relative px-10 py-8 bg-slate-800/50 border border-slate-700 rounded-lg hover:scale-105 transition"
+                onClick={() => setOpenCard(item.id)}
+              >
+                {openCard === item.id ? (
+                  <div onClick={(e) => e.stopPropagation()}>
+                    <h1 className="text-xl text-zinc-100">
+                      {item.number}
+                    </h1>
+
+                    <form className="flex flex-col gap-2 mt-4">
+                      <label className="text-zinc-400">Empresa</label>
+                      <input
+                        value={nameGym}
+                        placeholder="Digite o nome da empresa"
+                        onChange={(e) => setNameGym(e.target.value)}
+                        className="px-2 py-1 rounded bg-slate-800 border border-slate-500 text-zinc-100"
+                      />
+
+                      <label className="text-zinc-400">CNPJ</label>
+                      <input
+                        value={cnpj}
+                        placeholder="00.000.000/0000-00"
+                        onChange={(e) =>
+                          setCnpj(formatCnpj(e.target.value))
+                        }
+                        className="px-2 py-1 rounded bg-slate-800 border border-slate-500 text-zinc-100"
+                      />
+
+                      <label className="text-zinc-400">Implantador</label>
+                      <Select onValueChange={setDeployer}>
+                        <SelectTrigger className="bg-slate-800 border border-slate-500">
+                          <SelectValue placeholder="Selecione" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectGroup>
+                            <SelectItem value="João">João</SelectItem>
+                            <SelectItem value="Rayck">Rayck</SelectItem>
+                            <SelectItem value="Ellias">Ellias</SelectItem>
+                          </SelectGroup>
+                        </SelectContent>
+                      </Select>
+                    </form>
+
+                    <div className="grid grid-cols-2 gap-2 mt-4">
+                      <Button
+                        disabled={!isValidForm()}
+                        onClick={() => handleLink(item.id)}
+                      >
+                        <IoCheckmarkSharp /> Vincular
+                      </Button>
+
+                      <Button
+                        variant="secondary"
+                        onClick={() => setOpenCard(null)}
+                      >
+                        <IoCloseOutline /> Cancelar
+                      </Button>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="relative text-center">
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setConfirmDeleteId(item.id);
+                      }}
+                      className="absolute right-2 top-2 text-zinc-400 hover:text-red-500"
+                    >
+                      <IoCloseOutline size={18} />
+                    </button>
+
+                    <h1 className="text-xl text-zinc-100">
+                      {item.number}
+                    </h1>
+                    <p className="text-xs text-zinc-400">
+                      Clique para vincular
+                    </p>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* ===== PAGINAÇÃO ===== */}
+          {totalPages > 1 && (
+            <div className="flex justify-center items-center gap-4 pt-8">
+              <button
+                onClick={() => setPage((p) => Math.max(p - 1, 1))}
+                disabled={page === 1}
+                className="px-4 py-1 rounded bg-slate-700 text-zinc-100 disabled:opacity-40"
+              >
+                Anterior
+              </button>
+
+              <span className="text-sm text-zinc-400">
+                Página {page} de {totalPages}
+              </span>
+
+              <button
+                onClick={() =>
+                  setPage((p) => Math.min(p + 1, totalPages))
+                }
+                disabled={page === totalPages}
+                className="px-4 py-1 rounded bg-slate-700 text-zinc-100 disabled:opacity-40"
+              >
+                Próxima
+              </button>
+            </div>
+          )}
+        </>
       )}
 
       {/* ===== MODAL CONFIRMAR EXCLUSÃO ===== */}
