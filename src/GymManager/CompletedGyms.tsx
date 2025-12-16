@@ -102,7 +102,7 @@ export function CompletedGyms() {
   }
 
   return (
-    <div className="px-28 py-4 space-y-6 pb-20 min-h-screen">
+    <div className="px-28 py-4 space-y-6">
       {/* HEADER */}
       <div className="flex items-center justify-between">
         <h2 className="text-3xl font-bold text-zinc-100 capitalize">

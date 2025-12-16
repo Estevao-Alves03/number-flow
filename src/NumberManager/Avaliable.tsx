@@ -146,7 +146,7 @@ export function Avaliable() {
 
                       <label className="text-zinc-400">Implantador</label>
                       <Select onValueChange={setDeployer}>
-                        <SelectTrigger className="bg-slate-800 border border-slate-500">
+                        <SelectTrigger className="bg-slate-800 border border-slate-500 text-zinc-100">
                           <SelectValue placeholder="Selecione" />
                         </SelectTrigger>
                         <SelectContent>
