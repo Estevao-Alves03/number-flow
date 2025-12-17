@@ -5,7 +5,7 @@ export function Search() {
   const setSearchTerm = useNumberStore((state) => state.setSearchTerm);
 
   return (
-    <div className="px-28">
+    <div className="px-44">
       <section className="relative mt-6 mb-3">
         <IoSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-500" />
 

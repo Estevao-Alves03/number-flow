@@ -1,13 +1,19 @@
-import { SlCalender } from "react-icons/sl";
-import { TbPigMoney, TbMoneybag } from "react-icons/tb";
+import { TbBuildingSkyscraper } from "react-icons/tb";
+import { MdAttachMoney } from "react-icons/md";
+import { FiTrendingUp } from "react-icons/fi";
 import { useNumberStore } from "../Store/useNumberManagerStore";
+import {
+  Card,
+  CardContent,
+} from "../components/ui/card";
 
 /* helpers */
 function getMonthKey(date: Date) {
   const d = new Date(date);
-  return `${d.getUTCFullYear()}-${String(
-    d.getUTCMonth() + 1
-  ).padStart(2, "0")}`;
+  return `${d.getUTCFullYear()}-${String(d.getUTCMonth() + 1).padStart(
+    2,
+    "0"
+  )}`;
 }
 
 export function NavbarGym() {
@@ -23,65 +29,77 @@ export function NavbarGym() {
   const valorTotal = completedGyms.length * 20;
 
   return (
-    <div className="px-28 py-7">
+    <div className="px-44 py-7">
       <div className="pb-7 flex justify-between">
         <section>
-          <h1 className="text-4xl font-extrabold font-serif text-zinc-100">
+          <h1 className="text-5xl font-extrabold font-serif text-zinc-100 mb-4">
             Gerenciador de Academias
           </h1>
-          <p className="text-base font-sans text-zinc-400">
+          <p className="text-lg font-sans text-zinc-200">
             Gerenciando academias que foram conectadas e configuradas.
           </p>
         </section>
       </div>
 
-      <div className="grid grid-cols-3 gap-4 pb-2">
+      <div className="grid grid-cols-3 gap-6 pb-2">
         {/* MÊS ATUAL */}
-        <div className="p-5 rounded-xl bg-gradient-to-tr from-blue-700 to-blue-950 border shadow-lg backdrop-blur">
-          <section className="flex gap-2 text-white pl-4 pt-8">
-            <SlCalender className="mt-1" /> Mês atual
-          </section>
-          <section>
-            <h2 className="text-3xl font-bold pl-3 text-white pt-2">
-              {academiasMes}
-            </h2>
-            <p className="ps-3 font-serif text-white">
+        <Card className="p-5 rounded-xl bg-gradient-to-br from-blue-800 via-blue-600 to-blue-800 border-none backdrop-blur relative overflow-hidden shadow-xl">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16" />
+          <CardContent className="pt-6 relative z-10">
+            <div className="flex items-center justify-between mb-4">
+              <TbBuildingSkyscraper className="w-10 h-10 text-blue-50" />
+              <div className="text-4xl font-bold text-white">
+                {academiasMes}
+              </div>
+            </div>
+            <div className="text-2xl text-blue-50 font-bold mb-0.5">
+              Mês atual
+            </div>
+            <div className="text-lg font-sans text-blue-100">
               Academias concluídas
-            </p>
-          </section>
-        </div>
+            </div>
+          </CardContent>
+        </Card>
 
         {/* VALOR DO MÊS */}
-        <div className="p-5 rounded-xl bg-gradient-to-tr from-green-700 to-green-900 border shadow-lg backdrop-blur">
-          <section className="flex gap-2 text-white pl-4 pt-8">
-            <TbPigMoney className="text-xl" />
-            Valor do mês
-          </section>
-          <section>
-            <h2 className="text-3xl font-bold pl-3 text-white pt-2">
-              R$ {valorMes},00
-            </h2>
-            <p className="ps-3 font-serif text-white">
+        <Card className="p-5 rounded-xl bg-gradient-to-br from-green-800 via-green-600 to-green-800 border-none backdrop-blur relative overflow-hidden shadow-xl">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16" />
+          <CardContent className="pt-6 relative z-10">
+            <div className="flex items-center justify-between mb-4">
+              <MdAttachMoney className="w-10 h-10 text-green-50" />
+              <div className="text-4xl font-bold text-white">
+                {" "}
+                R$ {valorMes},00
+              </div>
+            </div>
+            <div className="text-2xl text-green-50 font-bold mb-0.5">
+              Valor Do Mês
+            </div>
+            <div className="text-lg font-sans text-green-100">
               {academiasMes} x R$20,00
-            </p>
-          </section>
-        </div>
+            </div>
+          </CardContent>
+        </Card>
 
         {/* TOTAL GERAL */}
-        <div className="p-5 rounded-xl bg-gradient-to-tr from-purple-700 to-purple-900 border shadow-lg backdrop-blur">
-          <section className="flex gap-2 text-white pl-4 pt-8">
-            <TbMoneybag className="text-xl" />
-            Valor total ganho
-          </section>
-          <section>
-            <h2 className="text-3xl font-bold pl-3 text-white pt-2">
-              R$ {valorTotal},00
-            </h2>
-            <p className="ps-3 font-serif text-white">
+        <Card className="p-5 rounded-xl bg-gradient-to-br from-purple-800 via-purple-600 to-purple-800 border-none backdrop-blur relative overflow-hidden shadow-xl">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16" />
+          <CardContent className="pt-6 relative z-10">
+            <div className="flex items-center justify-between mb-4">
+              <FiTrendingUp className="w-10 h-10 text-purple-50" />
+              <div className="text-4xl font-bold text-white">
+                {" "}
+                R$ {valorTotal},00
+              </div>
+            </div>
+            <div className="text-2xl text-purple-50 font-bold mb-0.5">
+              Total Geral
+            </div>
+            <div className="text-lg font-sans text-purple-100">
               {completedGyms.length} academias
-            </p>
-          </section>
-        </div>
+            </div>
+          </CardContent>
+        </Card>
       </div>
     </div>
   );

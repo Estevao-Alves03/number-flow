@@ -24,11 +24,9 @@ export function LinkedWithSearch() {
   const [editingItem, setEditingItem] = useState<NumberItem | null>(null);
   const [confirmUnlinkId, setConfirmUnlinkId] = useState<number | null>(null);
 
-  /* ===== PAGINAÇÃO ===== */
   const ITEMS_PER_PAGE = 3;
   const [page, setPage] = useState(1);
 
-  /* ===== FILTRO ===== */
   const linkedNumbers = activeNumbers
     .filter(
       (item) =>
@@ -42,15 +40,12 @@ export function LinkedWithSearch() {
       const term = normalize(searchTerm);
       const numericTerm = searchTerm.replace(/\D/g, "");
 
-      const matchText =
+      return (
         normalize(item.nameGym).includes(term) ||
-        normalize(item.deployer).includes(term);
-
-      const matchCnpj =
-        numericTerm.length > 0 &&
-        item.cnpj.replace(/\D/g, "").includes(numericTerm);
-
-      return matchText || matchCnpj;
+        normalize(item.deployer).includes(term) ||
+        (numericTerm &&
+          item.cnpj.replace(/\D/g, "").includes(numericTerm))
+      );
     });
 
   const totalPages = Math.ceil(linkedNumbers.length / ITEMS_PER_PAGE);
@@ -96,22 +91,27 @@ export function LinkedWithSearch() {
   return (
     <>
       {/* SEARCH */}
-      <div className="px-28">
-        <section className="relative mt-6 mb-3">
-          <IoSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-500" />
+      <div className="px-44">
+        <section className="relative mt-6 mb-4">
+          <IoSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-blue-400" />
           <input
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            placeholder="Busque pelo nome da empresa, implantador ou CNPJ"
-            className="bg-slate-800/50 border border-slate-700 rounded-lg py-2 pr-3 pl-10 w-full text-zinc-100"
+            placeholder="Buscar empresa, implantador ou CNPJ"
+            className="
+              w-full rounded-lg py-2 pl-10 pr-3
+              bg-slate-900 border border-blue-700/40
+              text-zinc-100 placeholder:text-zinc-500
+              focus:ring-2 focus:ring-blue-600
+            "
           />
         </section>
       </div>
 
-      {/* EMPTY STATE */}
+      {/* EMPTY */}
       {linkedNumbers.length === 0 && (
-        <div className="px-28 pt-8">
-          <div className="border border-slate-700 rounded-lg py-16 text-center text-zinc-400 bg-slate-800/30">
+        <div className="px-44 pt-10">
+          <div className="rounded-xl border border-blue-700/30 bg-slate-900 py-16 text-center text-zinc-400">
             <h2 className="text-xl font-semibold mb-2">
               Nenhum número vinculado
             </h2>
@@ -122,35 +122,51 @@ export function LinkedWithSearch() {
         </div>
       )}
 
-      {/* LISTAGEM */}
-      <div className="grid gap-4 pt-4 px-28">
+      {/* LISTA */}
+      <div className="grid gap-4 px-44 pt-4">
         {paginatedNumbers.map((item) => (
           <div
             key={item.id}
-            className="px-10 py-8 rounded-lg bg-slate-800/50 border border-slate-700 flex justify-between"
+            className="
+              flex justify-between items-start
+              rounded-xl p-6
+              bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900
+              border border-blue-700/30
+              hover:border-blue-500 hover:shadow-xl hover:scale-[1.02]
+              transition
+            "
           >
             <div>
-              <h1 className="text-xl text-zinc-200 mb-4 font-semibold">
+              <h1 className="text-xl font-bold text-zinc-100 mb-3">
                 {item.number}
               </h1>
-              <p className="text-blue-400 font-bold">
+
+              <p className="text-blue-400 font-bold text-lg">
                 {item.nameGym.toUpperCase()}
               </p>
-              <p className="text-zinc-400 font-semibold">
+
+              <p className="text-zinc-400">
                 CNPJ: <span className="text-zinc-100">{item.cnpj}</span>
               </p>
-              <p className="text-zinc-400 font-semibold">
+
+              <p className="text-zinc-400">
                 Implantador:{" "}
                 <span className="text-zinc-100">{item.deployer}</span>
               </p>
             </div>
 
             <div className="flex gap-2">
-              <Button onClick={() => setEditingItem(item)}>
+              <Button
+                className="bg-blue-600 hover:bg-blue-700"
+                onClick={() => setEditingItem(item)}
+              >
                 <FaPen />
               </Button>
 
-              <Button onClick={() => setConfirmUnlinkId(item.id)}>
+              <Button
+                className="bg-purple-600 hover:bg-purple-700"
+                onClick={() => setConfirmUnlinkId(item.id)}
+              >
                 <TfiUnlink />
               </Button>
             </div>
@@ -160,11 +176,11 @@ export function LinkedWithSearch() {
 
       {/* PAGINAÇÃO */}
       {totalPages > 1 && (
-        <div className="flex justify-center items-center gap-4 pt-6 pb-20">
+        <div className="flex justify-center items-center gap-4 pt-8">
           <button
             onClick={() => setPage((p) => Math.max(p - 1, 1))}
             disabled={page === 1}
-            className="px-3 py-1 rounded bg-slate-700 text-zinc-100 disabled:opacity-40"
+            className="px-4 py-1 rounded-lg bg-slate-800 border border-blue-700/30 text-zinc-100 disabled:opacity-40"
           >
             Anterior
           </button>
@@ -176,33 +192,30 @@ export function LinkedWithSearch() {
           <button
             onClick={() => setPage((p) => Math.min(p + 1, totalPages))}
             disabled={page === totalPages}
-            className="px-3 py-1 rounded bg-slate-700 text-zinc-100 disabled:opacity-40"
+            className="px-4 py-1 rounded-lg bg-slate-800 border border-blue-700/30 text-zinc-100 disabled:opacity-40"
           >
             Próxima
           </button>
         </div>
       )}
 
-      {/* MODAL CONFIRMAR DESVINCULAÇÃO */}
+      {/* MODAL DESVINCULAR */}
       {confirmUnlinkId && (
         <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50">
-          <div className="w-[520px] rounded-2xl bg-slate-900 border border-slate-700 p-8 space-y-6">
+          <div className="w-[520px] rounded-2xl bg-slate-900 border border-purple-700/30 p-8 space-y-6">
             <h2 className="text-xl font-semibold text-zinc-100">
               Confirmar Desvinculação
             </h2>
 
             <p className="text-zinc-400">
-              Tem certeza que deseja desvincular este número? A empresa será dada como concluida e o número ficará disponível novamente. <br />
-              Dados como: <strong>Nome da empresa, CNPJ e Data de conclusao</strong> ficaram disponíveis no gerenciador de academias
+              O número será concluído e voltará para disponíveis.
             </p>
 
             <div className="flex justify-end gap-3">
-              <Button
-                variant="outline"
-                onClick={() => setConfirmUnlinkId(null)}
-              >
+              <Button variant="outline" onClick={() => setConfirmUnlinkId(null)}>
                 Cancelar
               </Button>
+
               <Button
                 onClick={confirmUnlink}
                 className="bg-red-600 hover:bg-red-500"
@@ -214,16 +227,16 @@ export function LinkedWithSearch() {
         </div>
       )}
 
-      {/* MODAL EDIÇÃO */}
+      {/* MODAL EDITAR */}
       {editingItem && (
         <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
-          <div className="w-[600px] rounded-2xl bg-slate-900 border border-slate-700 p-8 space-y-4">
-            <p className="text-xl font-bold text-zinc-100">
+          <div className="w-[600px] rounded-2xl bg-slate-900 border border-blue-700/30 p-8 space-y-4">
+            <h2 className="text-xl font-bold text-zinc-100">
               {editingItem.number}
-            </p>
+            </h2>
 
             <input
-              className="w-full rounded-lg bg-slate-800 border border-slate-700 p-3 text-zinc-100"
+              className="w-full rounded-lg bg-slate-800 border border-blue-700/30 p-3 text-zinc-100"
               value={editingItem.nameGym}
               onChange={(e) =>
                 setEditingItem({ ...editingItem, nameGym: e.target.value })
@@ -231,7 +244,7 @@ export function LinkedWithSearch() {
             />
 
             <input
-              className="w-full rounded-lg bg-slate-800 border border-slate-700 p-3 text-zinc-100"
+              className="w-full rounded-lg bg-slate-800 border border-blue-700/30 p-3 text-zinc-100"
               value={editingItem.cnpj}
               onChange={(e) =>
                 setEditingItem({
@@ -242,7 +255,7 @@ export function LinkedWithSearch() {
             />
 
             <select
-              className="w-full rounded-lg bg-slate-800 border border-slate-700 p-3 text-zinc-100"
+              className="w-full rounded-lg bg-slate-800 border border-blue-700/30 p-3 text-zinc-100"
               value={editingItem.deployer}
               onChange={(e) =>
                 setEditingItem({ ...editingItem, deployer: e.target.value })
@@ -254,7 +267,10 @@ export function LinkedWithSearch() {
             </select>
 
             <div className="flex gap-3 pt-4">
-              <Button onClick={handleSave} className="bg-blue-600">
+              <Button
+                onClick={handleSave}
+                className="bg-blue-600 hover:bg-blue-700"
+              >
                 Salvar
               </Button>
               <Button variant="outline" onClick={() => setEditingItem(null)}>

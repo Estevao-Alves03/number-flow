@@ -1,5 +1,7 @@
 import { IoCloseOutline, IoCheckmarkSharp } from "react-icons/io5";
+import { FaPhone } from "react-icons/fa6";
 import { useState, useEffect } from "react";
+
 import {
   Select,
   SelectContent,
@@ -19,19 +21,14 @@ export function Avaliable() {
   const [cnpj, setCnpj] = useState("");
   const [deployer, setDeployer] = useState("");
 
-  /* ===== PAGINAÇÃO ===== */
   const ITEMS_PER_PAGE = 6;
   const [page, setPage] = useState(1);
 
   const { activeNumbers, editInfo, deleteNumber } = useNumberStore();
 
-  const availableNumbers = activeNumbers.filter(
-    (item) => !item.nameGym
-  );
+  const availableNumbers = activeNumbers.filter((item) => !item.nameGym);
 
-  const totalPages = Math.ceil(
-    availableNumbers.length / ITEMS_PER_PAGE
-  );
+  const totalPages = Math.ceil(availableNumbers.length / ITEMS_PER_PAGE);
 
   const paginatedNumbers = availableNumbers.slice(
     (page - 1) * ITEMS_PER_PAGE,
@@ -44,7 +41,6 @@ export function Avaliable() {
 
   function formatCnpj(value: string) {
     const digits = value.replace(/\D/g, "").slice(0, 14);
-
     return digits
       .replace(/^(\d{2})(\d)/, "$1.$2")
       .replace(/^(\d{2})\.(\d{3})(\d)/, "$1.$2.$3")
@@ -87,41 +83,43 @@ export function Avaliable() {
   }
 
   return (
-    <div className="pt-6 px-28 py-14">
-      <h1 className="text-2xl font-extrabold text-zinc-100">
+    <div className="px-44 py-14">
+      <h1 className="text-3xl font-extrabold text-zinc-100 mb-2">
         Números Disponíveis
       </h1>
-
-      <p className="text-zinc-400">
+      <p className="text-zinc-200 font-sans text-base">
         Clique em um número para vincular
       </p>
 
-      {/* ===== EMPTY STATE ===== */}
       {availableNumbers.length === 0 ? (
         <div className="pt-8">
-          <div className="border border-slate-700 rounded-lg py-16 text-center text-zinc-400 bg-slate-800/30">
+          <div className="border border-slate-700 rounded-xl py-16 text-center text-zinc-400 bg-slate-900/60">
             <h2 className="text-xl font-semibold mb-2">
               Nenhum número disponível
             </h2>
             <p className="text-sm">
-              Todos os números já estão vinculados ou ainda não foram
-              cadastrados.
+              Todos os números já estão vinculados.
             </p>
           </div>
         </div>
       ) : (
         <>
-          {/* ===== LISTA ===== */}
-          <div className="grid grid-cols-3 gap-4 pt-4">
+          <div className="grid grid-cols-3 gap-6 pt-6">
             {paginatedNumbers.map((item) => (
               <div
                 key={item.id}
-                className="relative px-10 py-8 bg-slate-800/50 border border-slate-700 rounded-lg hover:scale-105 transition"
                 onClick={() => setOpenCard(item.id)}
+                className="
+                  relative px-8 py-7 rounded-xl cursor-pointer
+                  bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900
+                  border border-blue-700/30
+                  hover:border-blue-500 hover:shadow-xl hover:scale-[1.02]
+                  transition
+                "
               >
                 {openCard === item.id ? (
                   <div onClick={(e) => e.stopPropagation()}>
-                    <h1 className="text-xl text-zinc-100">
+                    <h1 className="text-xl text-blue-400 font-bold">
                       {item.number}
                     </h1>
 
@@ -129,24 +127,24 @@ export function Avaliable() {
                       <label className="text-zinc-400">Empresa</label>
                       <input
                         value={nameGym}
-                        placeholder="Digite o nome da empresa"
                         onChange={(e) => setNameGym(e.target.value)}
-                        className="px-2 py-1 rounded bg-slate-800 border border-slate-500 text-zinc-100"
+                        placeholder="Nome da empresa"
+                        className="px-3 py-2 rounded-lg bg-slate-900 border border-blue-700/40 text-zinc-100 focus:ring-2 focus:ring-blue-600"
                       />
 
                       <label className="text-zinc-400">CNPJ</label>
                       <input
                         value={cnpj}
-                        placeholder="00.000.000/0000-00"
                         onChange={(e) =>
                           setCnpj(formatCnpj(e.target.value))
                         }
-                        className="px-2 py-1 rounded bg-slate-800 border border-slate-500 text-zinc-100"
+                        placeholder="00.000.000/0000-00"
+                        className="px-3 py-2 rounded-lg bg-slate-900 border border-blue-700/40 text-zinc-100 focus:ring-2 focus:ring-blue-600"
                       />
 
                       <label className="text-zinc-400">Implantador</label>
                       <Select onValueChange={setDeployer}>
-                        <SelectTrigger className="bg-slate-800 border border-slate-500 text-zinc-100">
+                        <SelectTrigger className="bg-slate-900 border border-blue-700/40 text-zinc-100">
                           <SelectValue placeholder="Selecione" />
                         </SelectTrigger>
                         <SelectContent>
@@ -159,24 +157,26 @@ export function Avaliable() {
                       </Select>
                     </form>
 
-                    <div className="grid grid-cols-2 gap-2 mt-4">
+                    <div className="grid grid-cols-2 gap-3 mt-5">
                       <Button
                         disabled={!isValidForm()}
                         onClick={() => handleLink(item.id)}
+                        className="bg-blue-600 hover:bg-blue-700 text-white"
                       >
                         <IoCheckmarkSharp /> Vincular
                       </Button>
 
                       <Button
-                        variant="secondary"
+                        variant="outline"
                         onClick={() => setOpenCard(null)}
+                        className="border-slate-600 text-black bg-white hover:bg-slate-300"
                       >
                         <IoCloseOutline /> Cancelar
                       </Button>
                     </div>
                   </div>
                 ) : (
-                  <div className="relative text-center">
+                  <div className="text-center relative">
                     <button
                       onClick={(e) => {
                         e.stopPropagation();
@@ -187,7 +187,8 @@ export function Avaliable() {
                       <IoCloseOutline size={18} />
                     </button>
 
-                    <h1 className="text-xl text-zinc-100">
+                    <h1 className="text-xl text-zinc-100 flex items-center justify-center gap-2">
+                      <FaPhone className="text-blue-400 bg-blue-500/10 rounded-lg p-1.5" />
                       {item.number}
                     </h1>
                     <p className="text-xs text-zinc-400">
@@ -199,9 +200,8 @@ export function Avaliable() {
             ))}
           </div>
 
-          {/* ===== PAGINAÇÃO ===== */}
           {totalPages > 1 && (
-            <div className="flex justify-center items-center gap-4 pt-8">
+            <div className="flex justify-center items-center gap-4 pt-10">
               <button
                 onClick={() => setPage((p) => Math.max(p - 1, 1))}
                 disabled={page === 1}
@@ -228,7 +228,6 @@ export function Avaliable() {
         </>
       )}
 
-      {/* ===== MODAL CONFIRMAR EXCLUSÃO ===== */}
       {confirmDeleteId && (
         <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50">
           <div className="w-[520px] rounded-2xl bg-slate-900 border border-slate-700 p-8 space-y-6">
@@ -237,25 +236,21 @@ export function Avaliable() {
             </h2>
 
             <p className="text-zinc-400">
-              Tem certeza que deseja excluir este número?
-              <br />
-              <strong className="text-red-500">
-                Este procedimento apaga o número completamente e não
-                poderá ser desfeito.
-              </strong>
+              Este número será removido permanentemente.
             </p>
 
             <div className="flex justify-end gap-3">
               <Button
                 variant="outline"
                 onClick={() => setConfirmDeleteId(null)}
+                className="text-black"
               >
                 Cancelar
               </Button>
 
               <Button
                 onClick={confirmDelete}
-                className="bg-red-600 hover:bg-red-500"
+                className="bg-red-600 hover:bg-red-500 text-white"
               >
                 Confirmar
               </Button>

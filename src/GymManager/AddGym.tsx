@@ -4,7 +4,7 @@ import { IoMdAdd } from "react-icons/io";
 
 export function AddGym() {
     return(
-        <div className="px-28">
+        <div className="px-44">
             <div className="bg-slate-800/50 border border-slate-500 shadow-lg backdrop-blur rounded-lg px-8 py-7">
                 <section className="mt-4 mb-8">
                     <span className="font-semibold text-white text-2xl">Adicionar Nova Academia</span>

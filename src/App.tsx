@@ -5,23 +5,26 @@ import { LinkedWithSearch } from "./NumberManager/LinkedWithSearch";
 import { AddNumbers } from "./NumberManager/AddNumbers";
 // ---- importaçoes da pagina de gym managar
 import { NavbarGym } from "./GymManager/NavbarGym";
-// import { AddGym } from "./GymManager/AddGym";
 import { CompletedGyms } from "./GymManager/CompletedGyms";
+// ---- importaçoes da pagina de users
+import { NavbarUsers } from "./Users/NavbarUsers";
+import { AddUser } from "./Users/AddUser";
 // ---- Componentes e outros
-import { Login } from "./Pages/Login";
+// import { Login } from "./Pages/Login";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./components/ui/tabs";
 
 function App() {
   return (
-    <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 min-h-screen">
+    <div className="bg-slate-950 min-h-screen">
       <Tabs defaultValue="NumberManager" className="">
-       <div className="px-4 sm:px-6 md:px-12 lg:px-20 xl:px-28 py-7 bg-slate-900/95 backdrop-blur border-b border-slate-700 shadow-lg">
+       <div className="px-4 sm:px-6 md:px-12 lg:px-20 xl:px-44 py-7 bg-slate-900/95 backdrop-blur border-b border-slate-700 shadow-lg">
           <TabsList className="gap-7 bg-slate-900/95">
-            <TabsTrigger value="Dashboard" className="px-4 py-2 font-bold text-base">Dashboard</TabsTrigger>
-            <TabsTrigger value="NumberManager" className="px-4 py-2 font-bold text-base">Number Manager</TabsTrigger>
-            <TabsTrigger value="Implantation" className="px-4 py-2 font-bold text-base">Implantation</TabsTrigger>
-            <TabsTrigger value="Feedback" className="px-4 py-2 font-bold text-base">Feedback - CS</TabsTrigger>
-            <TabsTrigger value="GymManager" className="px-4 py-2 font-bold text-base">Gym Manager</TabsTrigger>
+            <TabsTrigger value="Dashboard" className="px-4 py-2 text-base font-bold text-white data-[state=active]:bg-blue-700 data-[state=active]:text-white data-[state=inactive]:bg-slate-800">Dashboard</TabsTrigger>
+            <TabsTrigger value="NumberManager" className="px-4 py-2 text-base font-bold text-white data-[state=active]:bg-blue-700 data-[state=active]:text-white data-[state=inactive]:bg-slate-800">Number Manager</TabsTrigger>
+            <TabsTrigger value="Implantation" className="px-4 py-2 text-base font-bold text-white data-[state=active]:bg-blue-700 data-[state=active]:text-white data-[state=inactive]:bg-slate-800">Implantation</TabsTrigger>
+            <TabsTrigger value="Feedback" className="px-4 py-2 text-base font-bold text-white data-[state=active]:bg-blue-700 data-[state=active]:text-white data-[state=inactive]:bg-slate-800">Feedback - CS</TabsTrigger>
+            <TabsTrigger value="GymManager" className="px-4 py-2 text-base font-bold text-white data-[state=active]:bg-blue-700 data-[state=active]:text-white data-[state=inactive]:bg-slate-800">Gym Manager</TabsTrigger>
+            <TabsTrigger value="Users" className="px-4 py-2 text-base font-bold text-white data-[state=active]:bg-blue-700 data-[state=active]:text-white data-[state=inactive]:bg-slate-800">Users</TabsTrigger>
           </TabsList>
         </div>
         <TabsContent value="Dashboard">
@@ -41,8 +44,11 @@ function App() {
         </TabsContent>
         <TabsContent value="GymManager">
           <NavbarGym/>
-          {/* <AddGym/> */}
           <CompletedGyms/>
+        </TabsContent>
+        <TabsContent value="Users">
+          <NavbarUsers/>
+          <AddUser/>
         </TabsContent>
       </Tabs>
     </div>
