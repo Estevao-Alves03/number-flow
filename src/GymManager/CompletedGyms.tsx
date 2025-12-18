@@ -138,7 +138,7 @@ export function CompletedGyms() {
         {paginatedGyms.map((gym) => (
           <div
             key={gym.id}
-            className="flex items-center justify-between px-6 py-7 hover:bg-slate-800/40 transition"
+            className="flex items-center justify-between px-6 py-7 transition"
           >
             {/* ESQUERDA */}
             <div className="flex items-center gap-4">

@@ -22,7 +22,7 @@ export function Navbar() {
       <div className="pb-7 flex justify-between">
         <section>
           <h1 className="text-5xl font-extrabold font-serif text-zinc-100 mb-4">
-            Gerenciador de Números
+            Vincular Números
           </h1>
           <p className="text-lg font-sans text-zinc-200">
             Gerencie números de teste e suas vinculações com empresas.
@@ -32,7 +32,7 @@ export function Navbar() {
 
       {/* Cards */}
       <div className="grid grid-cols-3 gap-4 pb-2">
-        <Card className="p-4 rounded-xl bg-gradient-to-br from-blue-800 via-blue-600 to-blue-800 border-none backdrop-blur relative overflow-hidden shadow-xl">
+        <Card className="p-4 rounded-xl bg-gradient-to-br from-blue-700/55 to-blue-700/55 border-none backdrop-blur relative overflow-hidden shadow-xl">
           <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16" />
           <CardContent className="pt-6 relative z-10">
             <div className="flex items-center justify-between mb-4">
@@ -46,7 +46,7 @@ export function Navbar() {
             </div>
           </CardContent>
         </Card>
-        <Card className="p-4 rounded-xl bg-gradient-to-br from-orange-800 via-orange-600 to-orange-800 border-none backdrop-blur relative overflow-hidden shadow-xl">
+        <Card className="p-4 rounded-xl bg-gradient-to-br from-orange-700/55 to-orange-700/55 border-none backdrop-blur relative overflow-hidden shadow-xl">
           <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16" />
           <CardContent className="pt-6 relative z-10">
             <div className="flex items-center justify-between mb-4">
@@ -60,7 +60,7 @@ export function Navbar() {
             </div>
           </CardContent>
         </Card>
-        <Card className="p-4 rounded-xl bg-gradient-to-br from-green-800 via-green-600 to-green-800 border-none backdrop-blur relative overflow-hidden shadow-xl">
+        <Card className="p-4 rounded-xl bg-gradient-to-br from-green-700/55 to-green-700/55  border-none backdrop-blur relative overflow-hidden shadow-xl">
           <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16" />
           <CardContent className="pt-6 relative z-10">
             <div className="flex items-center justify-between mb-4">

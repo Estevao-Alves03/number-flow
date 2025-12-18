@@ -13,6 +13,14 @@ import { AllUsers } from "./Users/AllUsers";
 // ---- importaçoes da pagina de dashboard
 import { NavbarDashboard } from "./Dashboard/NavbarDashboard";
 import { Graphics } from "./Dashboard/Graphics";
+import { Activities } from "./Dashboard/Activities";
+// ---- importaçoes da pagina de implantaçoes
+import { NavbarImplantation } from "./Implantation/NavbarImplantation";
+import { Implantations } from "./Implantation/Implantations";
+import { Pending } from "./Implantation/Pending";
+// ---- importaçoes da pagina de feedback
+import { NavbarFeedback } from "./Feedback/NavbarFeedback";
+import { CrmFeedback } from "./Feedback/CrmFeedback";
 // ---- Componentes e outros
 // import { Login } from "./Pages/Login";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./components/ui/tabs";
@@ -20,7 +28,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "./components/ui/tabs";
 function App() {
   return (
     <div className="bg-slate-950 min-h-screen">
-      <Tabs defaultValue="NumberManager" className="">
+      <Tabs defaultValue="Dashboard" className="">
        <div className="px-4 sm:px-6 md:px-12 lg:px-20 xl:px-44 py-7 bg-slate-900/95 backdrop-blur border-b border-slate-700 shadow-lg">
           <TabsList className="gap-7 bg-slate-900/95">
             <TabsTrigger value="Dashboard" className="px-4 py-2 text-base font-bold text-white data-[state=active]:bg-blue-700 data-[state=active]:text-white data-[state=inactive]:bg-slate-800">Dashboard</TabsTrigger>
@@ -34,6 +42,7 @@ function App() {
         <TabsContent value="Dashboard">
           <NavbarDashboard/>
           <Graphics/>
+          <Activities/>
         </TabsContent>
         <TabsContent value="NumberManager">
           <Navbar />
@@ -42,10 +51,13 @@ function App() {
           <Avaliable />
         </TabsContent>
         <TabsContent value="Implantation">
-          {/* IMPLANTATIOS */}
+          <NavbarImplantation/>
+          <Implantations/>
+          <Pending/>
         </TabsContent>
         <TabsContent value="Feedback">
-          {/* FEEDBACK */}
+         <NavbarFeedback/>
+         <CrmFeedback/>
         </TabsContent>
         <TabsContent value="GymManager">
           <NavbarGym/>

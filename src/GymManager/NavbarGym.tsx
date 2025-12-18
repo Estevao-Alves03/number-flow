@@ -43,7 +43,7 @@ export function NavbarGym() {
 
       <div className="grid grid-cols-3 gap-6 pb-2">
         {/* MÊS ATUAL */}
-        <Card className="p-5 rounded-xl bg-gradient-to-br from-blue-800 via-blue-600 to-blue-800 border-none backdrop-blur relative overflow-hidden shadow-xl">
+        <Card className="p-5 rounded-xl bg-gradient-to-br from-blue-700/55 to-blue-700/55 border-none backdrop-blur relative overflow-hidden shadow-xl">
           <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16" />
           <CardContent className="pt-6 relative z-10">
             <div className="flex items-center justify-between mb-4">
@@ -62,7 +62,7 @@ export function NavbarGym() {
         </Card>
 
         {/* VALOR DO MÊS */}
-        <Card className="p-5 rounded-xl bg-gradient-to-br from-green-800 via-green-600 to-green-800 border-none backdrop-blur relative overflow-hidden shadow-xl">
+        <Card className="p-5 rounded-xl bg-gradient-to-br from-green-700/55 to-green-700/55 border-none backdrop-blur relative overflow-hidden shadow-xl">
           <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16" />
           <CardContent className="pt-6 relative z-10">
             <div className="flex items-center justify-between mb-4">
@@ -82,7 +82,7 @@ export function NavbarGym() {
         </Card>
 
         {/* TOTAL GERAL */}
-        <Card className="p-5 rounded-xl bg-gradient-to-br from-purple-800 via-purple-600 to-purple-800 border-none backdrop-blur relative overflow-hidden shadow-xl">
+        <Card className="p-5 rounded-xl bg-gradient-to-br from-violet-700/55 to-violet-700/55  border-none backdrop-blur relative overflow-hidden shadow-xl">
           <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16" />
           <CardContent className="pt-6 relative z-10">
             <div className="flex items-center justify-between mb-4">
