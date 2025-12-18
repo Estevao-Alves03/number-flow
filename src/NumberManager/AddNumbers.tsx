@@ -81,7 +81,7 @@ export function AddNumbers() {
         <div
           className="
             mt-6 mx-44 p-6 rounded-xl
-            bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900
+            bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950
             border border-blue-700/30
             shadow-xl
           "
@@ -109,9 +109,9 @@ export function AddNumbers() {
               onClick={handleAddNumbers}
               className="
                 self-start rounded-lg
-                bg-gradient-to-br from-green-700 via-green-600 to-green-700
+                bg-gradient-to-br from-blue-700 via-blue-600 to-blue-700
                 px-5 py-2 text-sm font-semibold text-white
-                hover:from-green-600 hover:to-green-800
+                hover:from-blue-600 hover:to-blue-800
                 shadow-lg
               "
             >

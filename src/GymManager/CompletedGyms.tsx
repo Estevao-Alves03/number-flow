@@ -82,7 +82,7 @@ export function CompletedGyms() {
   if (completedGyms.length === 0) {
     return (
       <div className="px-44 py-7">
-        <div className="rounded-xl border border-blue-700/30 bg-slate-900 p-20 text-center text-zinc-400">
+        <div className="rounded-xl border border-blue-700/30 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 p-20 text-center text-zinc-400">
           <h1 className="text-xl font-semibold">Nenhuma academia cadastrada</h1>
           <p className="text-sm">As academias concluídas aparecerão aqui.</p>
         </div>
@@ -129,12 +129,12 @@ export function CompletedGyms() {
           placeholder="Nome, implantador, CNPJ ou data"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="w-full bg-slate-900 border border-blue-700/30 rounded-lg py-2 pl-10 pr-3 text-zinc-100 placeholder:text-zinc-500 focus:ring-2 focus:ring-blue-600"
+          className="w-full bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 border border-blue-700/30 rounded-lg py-2 pl-10 pr-3 text-zinc-100 placeholder:text-zinc-500 focus:ring-2 focus:ring-blue-600"
         />
       </div>
 
       {/* LISTA */}
-      <div className="rounded-2xl bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 border border-blue-700/20 divide-y divide-slate-700">
+      <div className="rounded-2xl bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950  border border-blue-700/20 divide-y divide-slate-700">
         {paginatedGyms.map((gym) => (
           <div
             key={gym.id}

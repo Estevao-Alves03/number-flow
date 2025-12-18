@@ -93,7 +93,7 @@ export function Avaliable() {
 
       {availableNumbers.length === 0 ? (
         <div className="pt-8">
-          <div className="border border-slate-700 rounded-xl py-16 text-center text-zinc-400 bg-slate-900/60">
+          <div className="border border-blue-700/30 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 rounded-xl py-16 text-center text-zinc-400 ">
             <h2 className="text-xl font-semibold mb-2">
               Nenhum número disponível
             </h2>
@@ -111,7 +111,7 @@ export function Avaliable() {
                 onClick={() => setOpenCard(item.id)}
                 className="
                   relative px-8 py-7 rounded-xl cursor-pointer
-                  bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900
+                  bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950
                   border border-blue-700/30
                   hover:border-blue-500 hover:shadow-xl hover:scale-[1.02]
                   transition
@@ -147,7 +147,7 @@ export function Avaliable() {
                         <SelectTrigger className="bg-slate-900 border border-blue-700/40 text-zinc-100">
                           <SelectValue placeholder="Selecione" />
                         </SelectTrigger>
-                        <SelectContent>
+                        <SelectContent className="bg-slate-800 text-zinc-100">
                           <SelectGroup>
                             <SelectItem value="João">João</SelectItem>
                             <SelectItem value="Rayck">Rayck</SelectItem>

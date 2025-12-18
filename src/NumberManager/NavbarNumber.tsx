@@ -5,7 +5,6 @@ import { FaCheck } from "react-icons/fa";
 import { TbBuildingSkyscraper } from "react-icons/tb";
 
 
-
 export function Navbar() {
   const { activeNumbers } = useNumberStore();
 
@@ -47,16 +46,16 @@ export function Navbar() {
             </div>
           </CardContent>
         </Card>
-        <Card className="p-4 rounded-xl bg-gradient-to-br from-yellow-800 via-yellow-600 to-yellow-800 border-none backdrop-blur relative overflow-hidden shadow-xl">
+        <Card className="p-4 rounded-xl bg-gradient-to-br from-orange-800 via-orange-600 to-orange-800 border-none backdrop-blur relative overflow-hidden shadow-xl">
           <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16" />
           <CardContent className="pt-6 relative z-10">
             <div className="flex items-center justify-between mb-4">
-              <TbBuildingSkyscraper className="w-10 h-10 text-yellow-50" />
+              <TbBuildingSkyscraper className="w-10 h-10 text-orange-50" />
               <div className="text-5xl font-bold text-white">
                {numbersInUse}
               </div>
             </div>
-            <div className="text-2xl text-yellow-50 font-bold mb-0.5">
+            <div className="text-2xl text-orange-50 font-bold mb-0.5">
               Em Implantação
             </div>
           </CardContent>

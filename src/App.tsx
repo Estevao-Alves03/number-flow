@@ -9,6 +9,10 @@ import { CompletedGyms } from "./GymManager/CompletedGyms";
 // ---- importaçoes da pagina de users
 import { NavbarUsers } from "./Users/NavbarUsers";
 import { AddUser } from "./Users/AddUser";
+import { AllUsers } from "./Users/AllUsers";
+// ---- importaçoes da pagina de dashboard
+import { NavbarDashboard } from "./Dashboard/NavbarDashboard";
+import { Graphics } from "./Dashboard/Graphics";
 // ---- Componentes e outros
 // import { Login } from "./Pages/Login";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./components/ui/tabs";
@@ -28,7 +32,8 @@ function App() {
           </TabsList>
         </div>
         <TabsContent value="Dashboard">
-          {/* Dashboard */}
+          <NavbarDashboard/>
+          <Graphics/>
         </TabsContent>
         <TabsContent value="NumberManager">
           <Navbar />
@@ -49,6 +54,7 @@ function App() {
         <TabsContent value="Users">
           <NavbarUsers/>
           <AddUser/>
+          <AllUsers/>
         </TabsContent>
       </Tabs>
     </div>

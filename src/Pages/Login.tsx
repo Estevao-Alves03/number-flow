@@ -12,7 +12,7 @@ import {
 
 export function Login() {
   return (
-    <div className="flex flex-col items-center justify-center h-screen gap-6 bg-slate-950">
+    <div className="flex flex-col items-center justify-center h-screen gap-6 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 ">
       {/* Ícone */}
       <section className="rounded-xl p-5 bg-gradient-to-br from-blue-700 via-violet-700 to-violet-800 shadow-lg">
         <FiShield className="text-4xl text-white" />

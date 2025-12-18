@@ -100,7 +100,7 @@ export function LinkedWithSearch() {
             placeholder="Buscar empresa, implantador ou CNPJ"
             className="
               w-full rounded-lg py-2 pl-10 pr-3
-              bg-slate-900 border border-blue-700/40
+              bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 border border-blue-700/40
               text-zinc-100 placeholder:text-zinc-500
               focus:ring-2 focus:ring-blue-600
             "
@@ -111,7 +111,7 @@ export function LinkedWithSearch() {
       {/* EMPTY */}
       {linkedNumbers.length === 0 && (
         <div className="px-44 pt-10">
-          <div className="rounded-xl border border-blue-700/30 bg-slate-900 py-16 text-center text-zinc-400">
+          <div className="rounded-xl border border-blue-700/30 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 py-16 text-center text-zinc-400">
             <h2 className="text-xl font-semibold mb-2">
               Nenhum número vinculado
             </h2>
@@ -130,7 +130,7 @@ export function LinkedWithSearch() {
             className="
               flex justify-between items-start
               rounded-xl p-6
-              bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900
+              bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950
               border border-blue-700/30
               hover:border-blue-500 hover:shadow-xl hover:scale-[1.02]
               transition
@@ -202,13 +202,14 @@ export function LinkedWithSearch() {
       {/* MODAL DESVINCULAR */}
       {confirmUnlinkId && (
         <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50">
-          <div className="w-[520px] rounded-2xl bg-slate-900 border border-purple-700/30 p-8 space-y-6">
-            <h2 className="text-xl font-semibold text-zinc-100">
+          <div className="w-[520px] rounded-2xl bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950  p-8 space-y-6">
+            <h2 className="text-2xl font-semibold text-zinc-100">
               Confirmar Desvinculação
             </h2>
 
-            <p className="text-zinc-400">
-              O número será concluído e voltará para disponíveis.
+            <p className="text-zinc-400 text-lg">
+              Tem certeza que deseja desvincular este número? A empresa será data como concluida e o número ficará disponível novamente. <br /><br />
+              Dados como: <strong>nome da empresa, CNPJ e data de conclusao</strong> ficaram disponiveis no gerenciador de academias
             </p>
 
             <div className="flex justify-end gap-3">
@@ -230,13 +231,13 @@ export function LinkedWithSearch() {
       {/* MODAL EDITAR */}
       {editingItem && (
         <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
-          <div className="w-[600px] rounded-2xl bg-slate-900 border border-blue-700/30 p-8 space-y-4">
+          <div className="w-[600px] rounded-2xl bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 border border-blue-700/30 p-8 space-y-4">
             <h2 className="text-xl font-bold text-zinc-100">
               {editingItem.number}
             </h2>
 
             <input
-              className="w-full rounded-lg bg-slate-800 border border-blue-700/30 p-3 text-zinc-100"
+              className="w-full rounded-lg bg-slate-900 border border-blue-700/30 p-3 text-zinc-100"
               value={editingItem.nameGym}
               onChange={(e) =>
                 setEditingItem({ ...editingItem, nameGym: e.target.value })
@@ -244,7 +245,7 @@ export function LinkedWithSearch() {
             />
 
             <input
-              className="w-full rounded-lg bg-slate-800 border border-blue-700/30 p-3 text-zinc-100"
+              className="w-full rounded-lg bg-slate-900 border border-blue-700/30 p-3 text-zinc-100"
               value={editingItem.cnpj}
               onChange={(e) =>
                 setEditingItem({
@@ -255,7 +256,7 @@ export function LinkedWithSearch() {
             />
 
             <select
-              className="w-full rounded-lg bg-slate-800 border border-blue-700/30 p-3 text-zinc-100"
+              className="w-full rounded-lg bg-slate-900 border border-blue-700/30 p-3 text-zinc-100"
               value={editingItem.deployer}
               onChange={(e) =>
                 setEditingItem({ ...editingItem, deployer: e.target.value })
