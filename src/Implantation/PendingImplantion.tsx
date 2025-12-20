@@ -20,9 +20,9 @@ import {
 } from "../components/ui/select";
 import { Button } from "../components/ui/button";
 
-export function Pending() {
+export function PendingImplantion() {
   return (
-    <div className="px-44 mt-7 h-screen overflow-y-auto">
+    <div className=" mt-7 pb-16 ">
       {/* card fechado */}
       <div className="w-full mb-5 rounded-xl border border-blue-700/30 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 px-6 py-5 shadow-md">
         <div className="flex items-center justify-between hover:bg-slate-800/20 ">
@@ -53,7 +53,7 @@ export function Pending() {
         <hr className="border-slate-700/45 mt-7 mb-2" />
       </div>
       {/* card aberto */}
-      <div className="w-full rounded-xl border border-blue-700/30 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 px-6 py-5 shadow-md mb-52">
+      <div className="w-full rounded-xl border border-blue-700/30 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 px-6 py-5 shadow-md ">
         <div className="flex items-center justify-between hover:bg-slate-800/20">
           {/* Lado esquerdo */}
           <div className="space-y-2 mt-3 p-2">
@@ -79,9 +79,9 @@ export function Pending() {
           {/* Ícone */}
           <FiChevronsUp className="w-8 h-8 text-zinc-400" />
         </div>
-        <hr className="border-white mt-7 mb-16" />
+        <hr className="border-slate-700/45 mt-7 mb-16" />
 
-        <Card className="rounded-xl border border-blue-700/30 bg-slate-900/50 shador-md">
+        <Card className="rounded-xl border border-blue-700/30 bg-slate-900/500 shador-md">
           <CardHeader>
             <CardTitle className="text-white flex items-center gap-3 text-2xl font-bold">
               <MdAdd className="text-3xl text-blue-600" />
@@ -95,13 +95,13 @@ export function Pending() {
                 Categoria
               </h1>
               <Select>
-                <SelectTrigger className="w-[250px] h-[40px] border border-slate-700 bg-slate-800/50 text-zinc-200 text-base font-medium">
+                <SelectTrigger className="w-[280px] h-[45px] border border-slate-700 bg-slate-800/500 text-zinc-200 text-lg font-medium">
                   <SelectValue placeholder="Escolha uma etapa" />
                 </SelectTrigger>
-                <SelectContent className="bg-white hover:bg-zinc-300 ">
+                <SelectContent className="bg-white hover:bg-zinc-400 ">
                   <SelectItem
                     value="GymbotTraining"
-                    className="text-zinc-900 text-base font-semibold"
+                    className="text-zinc-900 text-base !font-semibold"
                   >
                     Treinamento Gymbot
                   </SelectItem>
@@ -138,12 +138,11 @@ export function Pending() {
               </h1>
               <Textarea
                 placeholder="Descreva em detalhes o que foi feito, discutido ou observado"
-                className="h-[180px] border border-slate-700 bg-slate-800/50 text-zinc-200 text-xl font-medium placeholder:text-base px-4 py-3"
-              />
+               className="h-[180px] border border-slate-700 bg-slate-800/10 text-zinc-200 !text-xl !font-bold !placeholder:text-xl px-5 py-5"/>
             </div>
-            <Button className="flex items-center gap-2 mt-6 bg-blue-900 py-5 hover:bg-blue-800/70 text-lg">
-              <MdAdd className="text-3xl text-white" />
-              Salvar Alterações
+            <Button className="flex items-center gap-2 mt-6 bg-blue-900 py-6 hover:bg-blue-800/70 text-xl">
+              <MdAdd className="!w-6 !h-6 text-white" />
+              Salvar Anotação
             </Button>
           </CardContent>
         </Card>
@@ -158,9 +157,9 @@ export function Pending() {
           </h1>
         </div>
         <hr className="border-slate-700/45 mt-7 mb-2" />
-        <Button className="flex items-center gap-2 mt-6 bg-green-900 py-5 hover:bg-green-800/70 text-lg">
-          <FiCheckCircle className="text-3xl text-white" />
-          Salvar Alterações
+        <Button className="flex items-center gap-2 mt-6 ml-2 bg-green-900 py-6 hover:bg-green-800/70 text-xl font-bold">
+          <FiCheckCircle className="!w-6 !h-6 text-white" />
+          Concluír Implantação
         </Button>
       </div>
     </div>

@@ -17,7 +17,6 @@ import { Activities } from "./Dashboard/Activities";
 // ---- importaçoes da pagina de implantaçoes
 import { NavbarImplantation } from "./Implantation/NavbarImplantation";
 import { Implantations } from "./Implantation/Implantations";
-import { Pending } from "./Implantation/Pending";
 // ---- importaçoes da pagina de feedback
 import { NavbarFeedback } from "./Feedback/NavbarFeedback";
 import { CrmFeedback } from "./Feedback/CrmFeedback";
@@ -53,7 +52,6 @@ function App() {
         <TabsContent value="Implantation">
           <NavbarImplantation/>
           <Implantations/>
-          <Pending/>
         </TabsContent>
         <TabsContent value="Feedback">
          <NavbarFeedback/>

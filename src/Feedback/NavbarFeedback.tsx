@@ -15,7 +15,7 @@ export function NavbarFeedback() {
         </section>
       </div>
 
-      <Card className="p-5 rounded-xl border-none bg-gradient-to-br from-violet-600/55 to-violet-700/55  relative overflow-hidden shadow-xl">
+      <Card className="p-5 rounded-xl border-none bg-gradient-to-br from-violet-700/55 to-violet-700/55  relative overflow-hidden shadow-xl">
         <div className="absolute top-0 right-0 w-44 h-44 bg-white/10 rounded-full -mr-20 -mt-20" />
         <CardContent className="pt-6 mt-3 mb-4 relative z-10">
           <div className="flex items-center gap-4 mb-4">
