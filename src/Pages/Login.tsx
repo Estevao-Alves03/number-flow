@@ -1,82 +1,73 @@
 import { FiShield } from "react-icons/fi";
-import { IoLogInOutline } from "react-icons/io5";
 import { Button } from "../components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "../components/ui/card";
 
 export function Login() {
   return (
-    <div className="flex flex-col items-center justify-center h-screen gap-6 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 ">
-      {/* Ícone */}
-      <section className="rounded-xl p-5 bg-gradient-to-br from-blue-700 via-violet-700 to-violet-800 shadow-lg">
-        <FiShield className="text-4xl text-white" />
-      </section>
+    <div className="flex items-center justify-center h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
+      <div className="relative w-[760px] h-[420px] rounded-2xl overflow-hidden shadow-2xl bg-slate-900 border border-blue-900/30 flex">
 
-      {/* Título */}
-      <section className="text-center space-y-1">
-        <h1 className="text-4xl font-extrabold text-white">
-          Gestão · GymFlow
-        </h1>
-        <p className="text-sm text-zinc-300">
-          Faça login para acessar a plataforma
-        </p>
-      </section>
+        {/* LADO ESQUERDO */}
+        <div className="w-1/2 relative bg-gradient-to-br from-indigo-900 via-blue-900 to-slate-900">
+          <div className="absolute inset-0 clip-left" />
+          <div className="relative z-10 p-10 h-full flex flex-col justify-center gap-4">
+            <FiShield className="text-5xl text-blue-200" />
+            <h1 className="text-4xl font-extrabold text-white">
+              Bem-vindo
+            </h1>
+            <p className="text-zinc-300 text-base font-medium leading-relaxed">
+              Acesse o GymFlow e gerencie implantações, clientes e feedbacks
+              de forma centralizada.
+            </p>
+          </div>
+        </div>
 
-      {/* Card */}
-      <Card className="w-[360px] bg-slate-900 border-zinc-700">
-        <CardHeader className="space-y-2">
-          <CardTitle className="flex items-center gap-2 text-white text-xl">
-            <IoLogInOutline className="text-3xl text-blue-500" />
+        {/* LADO DIREITO */}
+        <div className="w-1/2 p-10 flex flex-col justify-center bg-slate-950">
+          <h2 className="text-3xl font-bold text-white mb-6">
             Login
-          </CardTitle>
-          <CardDescription className="text-zinc-400">
-            Entre com suas credenciais de acesso
-          </CardDescription>
-        </CardHeader>
+          </h2>
 
-        <CardContent>
           <form className="space-y-4">
             <div className="space-y-1">
-              <label className="text-sm font-semibold text-zinc-400">
+              <label className="text-sm text-zinc-400 font-medium">
                 E-mail
               </label>
               <input
                 type="email"
                 placeholder="seu@email.com"
-                className="w-full rounded-lg px-3 py-2 bg-slate-800 border border-zinc-700 text-white placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-blue-600"
+                className="w-full rounded-md px-3 py-2 bg-slate-900 border border-blue-900/40 text-white placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-blue-700"
               />
             </div>
 
             <div className="space-y-1">
-              <label className="text-sm font-semibold text-zinc-400">
+              <label className="text-sm text-zinc-400 font-medium">
                 Senha
               </label>
               <input
                 type="password"
                 placeholder="••••••••"
-                className="w-full rounded-lg px-3 py-2 bg-slate-800 border border-zinc-700 text-white placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-blue-600"
+                className="w-full rounded-md px-3 py-2 bg-slate-900 border border-blue-900/40 text-white placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-blue-700"
               />
             </div>
 
-             <Button className="bg-gradient-to-br from-blue-700 via-violet-700 to-violet-800 shadow-lg w-full font-bold text-lg">
-                Entrar
+            <Button className="w-full !mt-10 bg-gradient-to-r from-blue-700 to-indigo-700 font-bold text-lg shadow-lg hover:opacity-90">
+              Entrar
             </Button>
           </form>
-        </CardContent>
+        </div>
+      </div>
 
-        <CardFooter className="flex flex-col gap-3">
-          <hr className="w-full border-zinc-700" />
-          <p className="text-xs text-zinc-400 text-center">
-            Não possui acesso? Entre em contato com o administrador
-          </p>
-        </CardFooter>
-      </Card>
+      {/* CLIP DIAGONAL */}
+      <style>{`
+        .clip-left {
+          background: linear-gradient(
+            to bottom right,
+            rgba(0,0,0,0.25),
+            rgba(0,0,0,0.65)
+          );
+          clip-path: polygon(0 0, 100% 0, 78% 100%, 0% 100%);
+        }
+      `}</style>
     </div>
   );
 }

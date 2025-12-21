@@ -1,26 +1,23 @@
 // ---- Importaçoes da pagina de number manager
-import { Navbar } from "./NumberManager/NavbarNumber";
-import { Avaliable } from "./NumberManager/Avaliable";
-import { LinkedWithSearch } from "./NumberManager/LinkedWithSearch";
-import { AddNumbers } from "./NumberManager/AddNumbers";
+import  {NavbarNumber, AddNumbers, LinkedWithSearch, Avaliable} from "@/Features/Number-Manager"
 // ---- importaçoes da pagina de gym managar
-import { NavbarGym } from "./GymManager/NavbarGym";
-import { CompletedGyms } from "./GymManager/CompletedGyms";
-// ---- importaçoes da pagina de users
-import { NavbarUsers } from "./Users/NavbarUsers";
-import { AddUser } from "./Users/AddUser";
-import { AllUsers } from "./Users/AllUsers";
-// ---- importaçoes da pagina de dashboard
-import { NavbarDashboard } from "./Dashboard/NavbarDashboard";
-import { Graphics } from "./Dashboard/Graphics";
-import { Activities } from "./Dashboard/Activities";
-// ---- importaçoes da pagina de implantaçoes
-import { NavbarImplantation } from "./Implantation/NavbarImplantation";
-import { Implantations } from "./Implantation/Implantations";
-// ---- importaçoes da pagina de feedback
-import { NavbarFeedback } from "./Feedback/NavbarFeedback";
-import { CrmFeedback } from "./Feedback/CrmFeedback";
-// ---- Componentes e outros
+// import { NavbarGym } from "./GymManager/NavbarGym";
+// import { CompletedGyms } from "./GymManager/CompletedGyms";
+// // ---- importaçoes da pagina de users
+// import { NavbarUsers } from "./Features/Users/Layout/NavbarUsers";
+// import { AddUser } from "./Users/AddUser";
+// import { AllUsers } from "./Users/AllUsers";
+// // ---- importaçoes da pagina de dashboard
+// import { NavbarDashboard } from "./Dashboard/NavbarDashboard";
+// import { Graphics } from "./Features/Dashboard/Pages/Graphics";
+// import { Activities } from "./Dashboard/Activities";
+// // ---- importaçoes da pagina de implantaçoes
+// import { NavbarImplantation } from "./Implantation/NavbarImplantation";
+// import { Implantations } from "./Implantation/Implantations";
+// // ---- importaçoes da pagina de feedback
+// import { NavbarFeedback } from "./Feedback/NavbarFeedback";
+// import { CrmFeedback } from "./Feedback/CrmFeedback";
+// // ---- Componentes e outros
 // import { Login } from "./Pages/Login";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./components/ui/tabs";
 
@@ -39,32 +36,32 @@ function App() {
           </TabsList>
         </div>
         <TabsContent value="Dashboard">
-          <NavbarDashboard/>
+          {/* <NavbarDashboard/>
           <Graphics/>
-          <Activities/>
+          <Activities/> */}
         </TabsContent>
         <TabsContent value="NumberManager">
-          <Navbar />
+          <NavbarNumber />
           <AddNumbers />
           <LinkedWithSearch/>
           <Avaliable />
         </TabsContent>
         <TabsContent value="Implantation">
-          <NavbarImplantation/>
-          <Implantations/>
+          {/* <NavbarImplantation/>
+          <Implantations/> */}
         </TabsContent>
         <TabsContent value="Feedback">
-         <NavbarFeedback/>
-         <CrmFeedback/>
+         {/* <NavbarFeedback/>
+         <CrmFeedback/> */}
         </TabsContent>
         <TabsContent value="GymManager">
-          <NavbarGym/>
-          <CompletedGyms/>
+          {/* <NavbarGym/>
+          <CompletedGyms/> */}
         </TabsContent>
         <TabsContent value="Users">
-          <NavbarUsers/>
+          {/* <NavbarUsers/>
           <AddUser/>
-          <AllUsers/>
+          <AllUsers/> */}
         </TabsContent>
       </Tabs>
     </div>
