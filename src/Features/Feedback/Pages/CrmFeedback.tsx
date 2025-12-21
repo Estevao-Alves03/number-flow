@@ -4,21 +4,29 @@ import {
   TabsList,
   TabsTrigger,
 } from "../../../components/ui/tabs";
-import { PendingFeedback } from "./PendingFeedback";
-import { ProgressFeedback } from "./ProgressFeedback";
-import { CompletedFeedback } from "./CompletedFeedback";
+import {default as PendingFeedback } from "./PendingFeedback";
+import {default as ProgressFeedback } from "./ProgressFeedback";
+import {default as CompletedFeedback } from "./CompletedFeedback";
+import {default as NewsFeedback} from "./NewsFeedback"
 import { IoSearch } from "react-icons/io5"
 import { useState } from "react";
 
-export function CrmFeedback() {
+export default function CrmFeedback() {
 
   const [searchTerm, setSearchTerm] = useState("")
 
   return (
     <div className="px-44 pb-16">
-      <Tabs defaultValue="pending" className="w-full">
+      <Tabs defaultValue="news" className="w-full">
         {/* Tabs (largura controlada) */}
-        <TabsList className="grid !w-[630px] grid-cols-3 !h-12 rounded-xl border border-blue-700/30 bg-gradient-to-br from-slate-950 via-slate-900/50 to-slate-950 p-1">
+        <TabsList className="grid !w-[630px] grid-cols-4 !h-12 rounded-xl border border-blue-700/30 bg-gradient-to-br from-slate-950 via-slate-900/50 to-slate-950 p-1">
+          <TabsTrigger
+            value="news"
+            className="h-full rounded-lg text-sm text-zinc-400 data-[state=active]:bg-violet-700/55 data-[state=active]:text-white"
+          >
+            Novos (0)
+          </TabsTrigger>
+
           <TabsTrigger
             value="pending"
             className="h-full rounded-lg text-sm text-zinc-400 data-[state=active]:bg-violet-700/55 data-[state=active]:text-white"
@@ -53,6 +61,10 @@ export function CrmFeedback() {
         </section>
 
         {/* Conteúdo em largura total */}
+        <TabsContent value="news" className="mt-8 w-full">
+          <NewsFeedback />
+        </TabsContent>
+
         <TabsContent value="pending" className="mt-8 w-full">
           <PendingFeedback />
         </TabsContent>

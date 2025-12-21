@@ -1,1 +1,1 @@
-export {default asNavbarNumber} from "./NavbarNumber"
+export {default as NavbarNumber} from "./NavbarNumber"

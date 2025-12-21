@@ -1,2 +1,2 @@
-export {AddUser} from "./AddUser"
-export {AllUsers} from "./AllUsers"
+export {default as AddUser} from "./AddUser"
+export {default as AllUsers} from "./AllUsers"

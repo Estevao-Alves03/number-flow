@@ -2,7 +2,7 @@ import { Button } from "../../../components/ui/button";
 import { IoMdAdd } from "react-icons/io";
 
 
-export function AddGym() {
+export default function AddGym() {
     return(
         <div className="px-44">
             <div className="bg-slate-800/50 border border-slate-500 shadow-lg backdrop-blur rounded-lg px-8 py-7">

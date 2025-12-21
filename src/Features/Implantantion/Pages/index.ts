@@ -1,3 +1,3 @@
-export {CompletedImplantation} from "./CompletedImplatation"
-export {Implantations} from "./Implantations"
-export {PendingImplantion} from "./PendingImplantion"
+export {default as CompletedImplantation} from "./CompletedImplatation"
+export {default as Implantations} from "./Implantations"
+export {default as PendingImplantion} from "./PendingImplantion"

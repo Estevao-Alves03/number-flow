@@ -36,7 +36,7 @@ function onlyNumbers(text: string) {
 }
 
 /* ================== COMPONENT ================== */
-export function CompletedGyms() {
+export default function CompletedGyms() {
   const completedGyms = useNumberStore((s) => s.completedGyms);
   const searchTerm = useNumberStore((s) => s.searchTerm);
   const setSearchTerm = useNumberStore((s) => s.setSearchTerm);

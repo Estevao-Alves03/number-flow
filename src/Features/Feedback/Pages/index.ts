@@ -1,4 +1,4 @@
-export {CompletedFeedback} from "./CompletedFeedback"
-export {CrmFeedback} from "./CrmFeedback"
-export {PendingFeedback} from "./PendingFeedback"
-export {ProgressFeedback} from "./ProgressFeedback"
+export {default as CompletedFeedback} from "./CompletedFeedback"
+export {default as CrmFeedback} from "./CrmFeedback"
+export {default as PendingFeedback} from "./PendingFeedback"
+export {default as ProgressFeedback} from "./ProgressFeedback"

@@ -1,13 +1,13 @@
 import { FiChevronsDown, FiChevronsUp, FiRefreshCcw } from "react-icons/fi";
 import { LiaStarSolid } from "react-icons/lia";
 
-export function CompletedFeedback() {
+export default function CompletedFeedback() {
   return (
     <div>
       {/* card fechado */}
       <div className="w-full mb-5 rounded-xl border border-violet-700 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 px-6 py-5 shadow-md">
         <div className="flex items-center justify-between hover:bg-slate-800/20 ">
-          {/* Lado esquerdo */}
+         
           <div className="space-y-2 mt-3 p-2 ">
             <div className="flex items-center gap-3">
               <h2 className="text-3xl font-semibold text-white">
@@ -30,15 +30,15 @@ export function CompletedFeedback() {
             </div>
           </div>
 
-          {/* Ícone */}
+          
           <FiChevronsDown className="w-8 h-8 text-zinc-400" />
         </div>
         <hr className="border-slate-700/45 mt-7 mb-2" />
       </div>
+      
       {/* card aberto */}
       <div className="w-full rounded-xl border border-violet-700 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 px-6 py-5 shadow-md">
         <div className="flex items-center justify-between hover:bg-slate-800/20">
-          {/* Lado esquerdo */}
           <div className="space-y-2 mt-3 p-2">
             <div className="flex items-center gap-3">
               <h2 className="text-3xl font-semibold text-white">
@@ -61,7 +61,6 @@ export function CompletedFeedback() {
             </div>
           </div>
 
-          {/* Ícone */}
           <FiChevronsUp className="w-8 h-8 text-zinc-400" />
         </div>
         <hr className="border-slate-700/45 mt-7 mb-5" />
@@ -92,7 +91,7 @@ export function CompletedFeedback() {
               Lorem Ipsum.
             </p>
             <section className="px-8 mb-4 text-base font-medium flex flex-wrap gap-3">
-              {/* Pontos positivos */}
+            
               <span className="px-3 py-1 bg-green-500/20 text-green-400 rounded-full">
                 Respostas rápidas 24h
               </span>
@@ -103,7 +102,7 @@ export function CompletedFeedback() {
                 Atendimento padronizado e eficiente
               </span>
 
-              {/* Pontos negativos */}
+             
               <span className="px-3 py-1 bg-red-500/20 text-red-400 rounded-full">
                 Pode falhar em perguntas muito específicas
               </span>
@@ -114,7 +113,7 @@ export function CompletedFeedback() {
                 Não substitui 100% o humano
               </span>
 
-              {/* Sugestões */}
+             
               <span className="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full">
                 Melhorar compreensão de contexto
               </span>
@@ -293,7 +292,7 @@ export function CompletedFeedback() {
               </span>
             </div>
             <section className="px-8 py-4 grid grid-cols-3 gap-4">
-              {/* produto */}
+              
               <div>
                 <h1 className="text-2xl font-medium">
                   Satisfação com o produto:
@@ -306,7 +305,7 @@ export function CompletedFeedback() {
                   <LiaStarSolid className="" />
                 </section>
               </div>
-              {/*implantaçao */}
+              
               <div>
                 <h1 className="text-2xl font-medium">
                   Satisfação com a implantação:
@@ -319,7 +318,7 @@ export function CompletedFeedback() {
                   <LiaStarSolid className="text-yellow-500" />
                 </section>
               </div>
-              {/*recomendação */}
+              
               <div>
                 <h1 className="text-2xl font-medium">
                   O cliente recomendaria o produto?

@@ -20,12 +20,11 @@ import { Label } from "../../../components/ui/label";
 import { FiCheckCircle } from "react-icons/fi";
 
 
-export function PendingFeedback() {
+export default function PendingFeedback() {
   return (
     <div>
       {/* academia que deve mandar mensagem no dia - card fechado*/}
       <div className="w-full mb-4 rounded-xl bg-white p-6 border-4 border-violet-600/90 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 shadow-md">
-        {/* nome da academia e botao de interaçao */}
         <div className="text-white flex items-center justify-between px-4 pb-2">
           <h1 className="text-3xl font-bold flex gap-3">
             Acad Acuas Fit
@@ -37,7 +36,6 @@ export function PendingFeedback() {
             Coletar feedback
           </Button>
         </div>
-        {/* Informaçoes sobre o crm */}
         <div className="text-white px-4 grid grid-rows-3 gap-1">
           <section className="flex items-center gap-2">
             <h2 className="font-semibold text-lg flex items-center gap-2">
@@ -55,12 +53,11 @@ export function PendingFeedback() {
             <span className="text-zinc-300 mt-1">19/12/2025</span>
           </section>
         </div>
-      </div>
+      </div> 
 
       {/* card aberto - 3 a 15 dias*/}
-      <div className="w-full rounded-xl border border-violet-700/30 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 px-6 py-5 shadow-md ">
+       <div className="w-full rounded-xl border-4 border-violet-600/90 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 px-6 py-5 shadow-md ">
         <div className="flex items-center justify-between hover:bg-slate-800/20">
-          {/* Lado esquerdo */}
           <div className="space-y-2 mt-3 p-2">
             <div className="flex items-center gap-3">
               <h2 className="text-3xl font-semibold text-white">
@@ -79,12 +76,12 @@ export function PendingFeedback() {
             </div>
           </div>
 
-          {/* Ícone */}
+         
           <FiChevronsUp className="w-8 h-8 text-zinc-400" />
         </div>
         <hr className="border-slate-700/45 mt-7 mb-16" />
 
-        <Card className="rounded-xl border border-violet-700/30 bg-slate-900/500 shador-md">
+        <Card className="rounded-xl border-4 border-violet-600/90 bg-slate-900/500 shador-md">
           <CardHeader>
             <CardTitle className="text-white flex items-center gap-3 text-2xl font-bold">
               <MdAdd className="text-3xl text-blue-600" />
@@ -131,12 +128,12 @@ export function PendingFeedback() {
             </Button>
           </CardContent>
         </Card>
-      </div>
+      </div>  
 
-      {/* card aberto - 30  */}
-      <div className="w-full mt-4 rounded-xl border border-violet-700/30 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 px-6 py-5 shadow-md ">
+  
+      <div className="w-full mt-4 rounded-xl border-4 border-violet-600/90 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 px-6 py-5 shadow-md ">
         <div className="flex items-center justify-between hover:bg-slate-800/20">
-          {/* Lado esquerdo */}
+         
           <div className="space-y-2 mt-3 p-2">
             <div className="flex items-center gap-3">
               <h2 className="text-3xl font-semibold text-white">
@@ -155,12 +152,12 @@ export function PendingFeedback() {
             </div>
           </div>
 
-          {/* Ícone */}
+        
           <FiChevronsUp className="w-8 h-8 text-zinc-400" />
         </div>
         <hr className="border-slate-700/45 mt-7 mb-16" />
 
-        <Card className="rounded-xl border border-violet-700/30 bg-slate-900/500 shador-md">
+        <Card className="rounded-xl border border-violet-600/90 bg-slate-900/500 shador-md">
           <CardHeader>
             <CardTitle className="text-white flex items-center gap-3 text-2xl font-bold">
               <MdAdd className="text-3xl text-blue-600" />
@@ -253,7 +250,7 @@ export function PendingFeedback() {
             </Button>
           </CardContent>
         </Card>
-      </div>
+      </div> 
     </div>
   );
 }

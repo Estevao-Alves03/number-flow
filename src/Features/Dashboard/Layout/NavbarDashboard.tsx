@@ -5,7 +5,7 @@ import { FiTarget } from "react-icons/fi";
 import { TfiTime } from "react-icons/tfi";
 import { IoAlertCircleOutline } from "react-icons/io5";
 
-export function NavbarDashboard() {
+export default function NavbarDashboard() {
   return (
     <div className="px-44 py-7">
       {/* Título */}

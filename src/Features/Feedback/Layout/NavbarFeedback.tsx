@@ -1,7 +1,7 @@
 import { Card, CardContent } from "../../../components/ui/card";
 import { FaBell } from "react-icons/fa";
 
-export function NavbarFeedback() {
+export default function NavbarFeedback() {
   return (
     <div className="px-44 py-7">
       <div className="pb-7 flex justify-between">

@@ -1,2 +1,2 @@
 export * from "./Pages"
-export {NavbarUsers} from "./Layout/NavbarUsers"
+export * from "./Layout"

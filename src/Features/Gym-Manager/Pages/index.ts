@@ -1,2 +1,2 @@
-export {AddGym} from "./AddGym"
-export {CompletedGyms} from "./CompletedGyms"
+export {default as AddGym} from "./AddGym"
+export {default as CompletedGyms} from "./CompletedGyms"

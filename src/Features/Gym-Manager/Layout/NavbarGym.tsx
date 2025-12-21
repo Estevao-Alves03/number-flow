@@ -16,7 +16,7 @@ function getMonthKey(date: Date) {
   )}`;
 }
 
-export function NavbarGym() {
+export default function NavbarGym() {
   const completedGyms = useNumberStore((s) => s.completedGyms);
 
   const mesAtualKey = getMonthKey(new Date());

@@ -1,30 +1,19 @@
-// ---- Importaçoes da pagina de number manager
-import  {NavbarNumber, AddNumbers, LinkedWithSearch, Avaliable} from "@/Features/Number-Manager"
-// ---- importaçoes da pagina de gym managar
-// import { NavbarGym } from "./GymManager/NavbarGym";
-// import { CompletedGyms } from "./GymManager/CompletedGyms";
-// // ---- importaçoes da pagina de users
-// import { NavbarUsers } from "./Features/Users/Layout/NavbarUsers";
-// import { AddUser } from "./Users/AddUser";
-// import { AllUsers } from "./Users/AllUsers";
-// // ---- importaçoes da pagina de dashboard
-// import { NavbarDashboard } from "./Dashboard/NavbarDashboard";
-// import { Graphics } from "./Features/Dashboard/Pages/Graphics";
-// import { Activities } from "./Dashboard/Activities";
-// // ---- importaçoes da pagina de implantaçoes
-// import { NavbarImplantation } from "./Implantation/NavbarImplantation";
-// import { Implantations } from "./Implantation/Implantations";
-// // ---- importaçoes da pagina de feedback
-// import { NavbarFeedback } from "./Feedback/NavbarFeedback";
-// import { CrmFeedback } from "./Feedback/CrmFeedback";
-// // ---- Componentes e outros
-// import { Login } from "./Pages/Login";
+// ---- Importaçoes das paginas 
+import  {NavbarNumber, AddNumbers, LinkedWithSearch, Avaliable} from "./Features/Number-Manager/Index"
+import { NavbarDashboard, Graphics, Activities } from "./Features/Dashboard/Index";
+import { NavbarImplantation, Implantations } from "./Features/Implantantion/Index";
+import { NavbarFeedback, CrmFeedback } from "./Features/Feedback/Index";
+import { NavbarGym, CompletedGyms } from "./Features/Gym-Manager/Index";
+import { NavbarUsers, AllUsers, AddUser } from "./Features/Users/Index";
+
+// ---- Componentes usados 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./components/ui/tabs";
 
 function App() {
   return (
     <div className="bg-slate-950 min-h-screen">
       <Tabs defaultValue="Dashboard" className="">
+        {/* Navbar de botoes */}
        <div className="px-4 sm:px-6 md:px-12 lg:px-20 xl:px-44 py-7 bg-slate-900/95 backdrop-blur border-b border-slate-700 shadow-lg">
           <TabsList className="gap-7 bg-slate-900/95">
             <TabsTrigger value="Dashboard" className="px-4 py-2 text-base font-bold text-white data-[state=active]:bg-blue-700 data-[state=active]:text-white data-[state=inactive]:bg-slate-800">Dashboard</TabsTrigger>
@@ -35,10 +24,11 @@ function App() {
             <TabsTrigger value="Users" className="px-4 py-2 text-base font-bold text-white data-[state=active]:bg-blue-700 data-[state=active]:text-white data-[state=inactive]:bg-slate-800">Users</TabsTrigger>
           </TabsList>
         </div>
+        {/* conteudo das paginas */}
         <TabsContent value="Dashboard">
-          {/* <NavbarDashboard/>
+          <NavbarDashboard/>
           <Graphics/>
-          <Activities/> */}
+          <Activities/>
         </TabsContent>
         <TabsContent value="NumberManager">
           <NavbarNumber />
@@ -47,21 +37,21 @@ function App() {
           <Avaliable />
         </TabsContent>
         <TabsContent value="Implantation">
-          {/* <NavbarImplantation/>
-          <Implantations/> */}
+          <NavbarImplantation/>
+          <Implantations/>
         </TabsContent>
         <TabsContent value="Feedback">
-         {/* <NavbarFeedback/>
-         <CrmFeedback/> */}
+         <NavbarFeedback/>
+         <CrmFeedback/>
         </TabsContent>
         <TabsContent value="GymManager">
-          {/* <NavbarGym/>
-          <CompletedGyms/> */}
+          <NavbarGym/>
+          <CompletedGyms/>
         </TabsContent>
         <TabsContent value="Users">
-          {/* <NavbarUsers/>
+          <NavbarUsers/>
           <AddUser/>
-          <AllUsers/> */}
+          <AllUsers/>
         </TabsContent>
       </Tabs>
     </div>

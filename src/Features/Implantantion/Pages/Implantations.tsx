@@ -4,12 +4,12 @@ import {
   TabsList,
   TabsTrigger,
 } from "../../../components/ui/tabs";
-import { PendingImplantion } from "./PendingImplantion";
-import { CompletedImplantation } from "./CompletedImplatation";
+import {default as PendingImplantion } from "./PendingImplantion";
+import {default as CompletedImplantation } from "./CompletedImplatation";
 import { IoSearch } from "react-icons/io5";
 import { useState } from "react";
 
-export function Implantations() {
+export default function Implantations() {
   const [searchTerm, setSearchTerm] = useState("");
 
   return (

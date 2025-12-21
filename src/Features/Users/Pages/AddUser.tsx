@@ -19,7 +19,7 @@ import {
   SelectValue,
 } from "../../../components/ui/select";
 
-export function AddUser() {
+export default function AddUser() {
   return (
     <div className="px-44">
       {/* CARD CADASTRO */}

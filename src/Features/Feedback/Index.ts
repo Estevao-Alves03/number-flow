@@ -1,2 +1,2 @@
 export * from "./Pages"
-export {NavbarFeedback} from "./Layout/NavbarFeedback"
+export *from "./Layout"

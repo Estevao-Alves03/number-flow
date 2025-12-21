@@ -20,7 +20,7 @@ import {
 } from "../../../components/ui/select";
 import { Button } from "../../../components/ui/button";
 
-export function PendingImplantion() {
+export default function PendingImplantion() {
   return (
     <div className=" mt-7 pb-16 ">
       {/* card fechado */}
@@ -33,7 +33,7 @@ export function PendingImplantion() {
                 teste de acad
               </h2>
 
-              <span className="rounded-full bg-yellow-500/20 px-3 py-1 text-lg font-medium text-yellow-400">
+              <span className="rounded-full bg-blue-500/20 px-3 py-1 text-lg font-medium text-blue-400">
                 Em andamento
               </span>
             </div>
@@ -62,7 +62,7 @@ export function PendingImplantion() {
                 teste de acad
               </h2>
 
-              <span className="rounded-full bg-yellow-500/20 px-3 py-1 text-lg font-medium text-yellow-400">
+              <span className="rounded-full bg-blue-500/20 px-3 py-1 text-lg font-medium text-blue-400">
                 Em andamento
               </span>
             </div>

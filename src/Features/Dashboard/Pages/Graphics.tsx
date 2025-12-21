@@ -10,7 +10,7 @@ import {
   CardTitle,
 } from "../../../components/ui/card";
 
-export function Graphics() {
+export default function Graphics() {
   return (
     <div className="px-44 pb-10">
       <div className="grid grid-cols-3 gap-8">
@@ -28,7 +28,9 @@ export function Graphics() {
           <CardContent className="pt-11">
             <div className="mb-6">
               <div className="flex justify-between gap-2 text-sm mb-2">
-                <span className="text-white text-xl mb-4 font-semibold">Produto</span>
+                <span className="text-white text-xl mb-4 font-semibold">
+                  Produto
+                </span>
                 <span className="text-3xl font-bold text-white">
                   3.0<span className="text-base text-zinc-300">/5</span>
                 </span>
@@ -40,7 +42,9 @@ export function Graphics() {
 
             <div className="mb-6">
               <div className="flex justify-between text-sm mb-2">
-                <span className="text-white text-xl mb-4 font-semibold">Implementação</span>
+                <span className="text-white text-xl mb-4 font-semibold">
+                  Implementação
+                </span>
                 <span className="text-3xl font-bold text-white">
                   4.0<span className="text-base text-zinc-300">/5</span>
                 </span>
@@ -76,15 +80,15 @@ export function Graphics() {
 
           <CardContent className="pt-10 flex flex-col gap-4">
             <div className="px-4 py-6 text-xl font-bold text-zinc-100 bg-slate-800/40 rounded-lg flex items-center gap-2">
-              <div className="w-4 h-4 rounded-full bg-yellow-500" />
-              Pendentes
-              <span className="ml-auto text-2xl">3</span>
-            </div>
-
-            <div className="px-4 py-6 text-xl font-bold text-zinc-100 bg-slate-800/40 rounded-lg flex items-center gap-2">
               <div className="w-4 h-4 rounded-full bg-blue-500" />
               Em Andamento
               <span className="ml-auto text-2xl">2</span>
+            </div>
+
+            <div className="px-4 py-6 text-xl font-bold text-zinc-100 bg-slate-800/40 rounded-lg flex items-center gap-2">
+              <div className="w-4 h-4 rounded-full bg-violet-500" />
+              Coletando Feedback
+              <span className="ml-auto text-2xl">3</span>
             </div>
 
             <div className="px-4 py-6 text-xl font-bold text-zinc-100 bg-slate-800/40 rounded-lg flex items-center gap-2">

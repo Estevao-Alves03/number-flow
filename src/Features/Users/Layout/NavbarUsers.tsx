@@ -1,4 +1,4 @@
-export function NavbarUsers() {
+export default function NavbarUsers() {
   return (
     <div className="px-44 pt-7">
       <div className="pb-7 flex justify-between">

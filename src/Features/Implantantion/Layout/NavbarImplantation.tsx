@@ -3,7 +3,7 @@ import { Card, CardContent } from "../../../components/ui/card";
 import { TfiTime } from "react-icons/tfi";
 
 
-export function NavbarImplantation() {
+export default function NavbarImplantation() {
   return (
     <div className="px-44 py-7">
       <div className="pb-7 flex justify-between">
@@ -32,16 +32,16 @@ export function NavbarImplantation() {
             </div>
           </CardContent>
         </Card>
-        <Card className="p-4 rounded-xl bg-gradient-to-br from-green-700/55 to-green-700/55  border-none backdrop-blur relative overflow-hidden shadow-xl">
+        <Card className="p-4 rounded-xl bg-gradient-to-br from-violet-700/55 to-violet-700/55  border-none backdrop-blur relative overflow-hidden shadow-xl">
           <div className="absolute top-0 right-0 w-44 h-44 bg-white/10 rounded-full -mr-20 -mt-20" />
           <CardContent className="pt-14 relative z-10">
             <div className="flex items-center justify-between mb-4">
-              <FiCheckCircle className="w-10 h-10 text-green-50" />
+              <FiCheckCircle className="w-10 h-10 text-violet-50" />
               <div className="text-5xl font-bold text-white">
                 0
               </div>
             </div>
-            <div className="text-2xl text-green-50 font-bold mb-0.5">
+            <div className="text-2xl text-violet-50 font-bold mb-0.5">
               Implantações Concluídas
             </div>
           </CardContent>

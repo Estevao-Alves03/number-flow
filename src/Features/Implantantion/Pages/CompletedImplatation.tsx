@@ -4,7 +4,7 @@ import { FiRefreshCcw } from "react-icons/fi";
 // // import { GrNotes } from "react-icons/gr";
 // import { Button } from "../components/ui/button";
 
-export function CompletedImplantation() {
+export default function CompletedImplantation() {
   return (
     <div className=" mt-7 pb-16">
       {/* card fechado */}
