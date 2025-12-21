@@ -136,6 +136,19 @@ export default function Graphics() {
                 <GiSportMedal className="text-green-500" />3 concluidos
               </div>
             </div>
+            <div className="px-4 py-4 text-xl font-bold text-zinc-100 bg-slate-800/40 rounded-lg">
+              <div className="flex items-center justify-between w-full">
+                <h3 className="">João</h3>
+                <span className="px-3 py-1 rounded-xl bg-slate-700">
+                  6 Total
+                </span>
+              </div>
+              <div className="flex items-center gap-2 mt-1">
+                <IoFlashSharp className="text-yellow-500" />
+                3 ativas
+                <GiSportMedal className="text-green-500" />3 concluidos
+              </div>
+            </div>
           </CardContent>
         </Card>
       </div>
