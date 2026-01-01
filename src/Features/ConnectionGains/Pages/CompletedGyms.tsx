@@ -83,8 +83,17 @@ export default function CompletedGyms() {
     return (
       <div className="px-44 py-7">
         <div className="rounded-xl border border-blue-700/30 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 p-20 text-center text-zinc-400">
-          <h1 className="text-xl font-semibold">Nenhuma academia cadastrada</h1>
-          <p className="text-sm">As academias concluídas aparecerão aqui.</p>
+          <div className="flex flex-col items-center">
+            <TbBuildingSkyscraper className="text-6xl text-zinc-600" />
+
+            <h1 className="text-xl font-semibold mt-6">
+              Nenhuma academia cadastrada ainda.
+            </h1>
+
+            <p className="text-sm">
+              As academias vinculadas aparecerão automaticamente aqui.
+            </p>
+          </div>
         </div>
       </div>
     );
@@ -151,11 +160,18 @@ export default function CompletedGyms() {
                   {gym.nameGym}
                 </h3>
                 <div className="flex gap-3 text-lg  mt-1">
-                  <p className="text-white font-bold">CNPJ: <span className="text-zinc-400 font-sans">{gym.cnpj}</span></p>
-                  <span className="text-white text-xl" >•</span>
-                  <span className="text-zinc-400 font-sans">{gym.deployer}</span>
+                  <p className="text-white font-bold">
+                    CNPJ:{" "}
+                    <span className="text-zinc-400 font-sans">{gym.cnpj}</span>
+                  </p>
                   <span className="text-white text-xl">•</span>
-                  <span className="text-zinc-400 font-sans">{formatDate(gym.unlinkedAt)}</span>
+                  <span className="text-zinc-400 font-sans">
+                    {gym.deployer}
+                  </span>
+                  <span className="text-white text-xl">•</span>
+                  <span className="text-zinc-400 font-sans">
+                    {formatDate(gym.unlinkedAt)}
+                  </span>
                 </div>
               </div>
             </div>

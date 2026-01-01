@@ -10,7 +10,7 @@ import {
   CardTitle,
 } from "../../../components/ui/card";
 
-export default function Graphics() {
+export default function GraphicsDashboard() {
   return (
     <div className="px-44 pb-10">
       <div className="grid grid-cols-3 gap-8">

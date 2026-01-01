@@ -1,9 +1,24 @@
+import { TbClock } from "react-icons/tb";
 import { Button } from "../../../components/ui/button";
 import { SlCalender } from "react-icons/sl";
 
-export  default function ProgressFeedback() {
+export default function ProgressFeedback() {
   return (
     <div>
+      <div className="rounded-xl border-2 border-violet-700/30 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 p-20 text-center text-zinc-400 mb-6">
+        <div className="flex flex-col items-center gap-2">
+          <TbClock className="text-6xl text-zinc-600" />
+
+          <h1 className="text-xl font-semibold mt-6">
+            Nenhum feedback em andamento
+          </h1>
+
+          <p className="text-sm">
+            Os feedbacks em que estão em processo de contato aparecerão aqui
+          </p>
+        </div>
+      </div>
+
       {/* academia que deve entrar em contato mais a frente */}
       <div className="w-full rounded-xl bg-white p-6 border-2 border-violet-600 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 shadow-md">
         {/* nome da academia e botao de interaçao */}

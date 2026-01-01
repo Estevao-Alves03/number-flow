@@ -1,9 +1,23 @@
+import { TbPlus } from "react-icons/tb";
 import { Button } from "../../../components/ui/button";
 import { SlCalender } from "react-icons/sl";
 
 export default function NewsFeedback() {
   return (
     <div>
+      <div className="rounded-xl border border-violet-700/40 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 p-20 text-center text-zinc-400 mb-6">
+        <div className="flex flex-col items-center gap-2">
+          <TbPlus className="text-6xl text-zinc-600" />
+
+          <h1 className="text-xl font-semibold mt-6">Nenhum feedback novo</h1>
+
+          <p className="text-sm">
+            Novos feedbacks aparecerão aqui quando implementações forem
+            concluídas
+          </p>
+        </div>
+      </div>
+
       <div className="w-full mb-4 rounded-xl bg-white p-6 border-4 border-violet-600/90 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 shadow-md">
         <div className="text-white flex items-center justify-between px-4 pb-2">
           <h1 className="text-3xl font-bold flex gap-3">

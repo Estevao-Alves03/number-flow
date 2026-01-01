@@ -23,6 +23,20 @@ import { Button } from "../../../components/ui/button";
 export default function PendingImplantion() {
   return (
     <div className=" mt-7 pb-16 ">
+      <div className="rounded-xl border-2 border-blue-700/30 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 p-20 text-center text-zinc-400 mb-6">
+        <div className="flex flex-col items-center gap-2">
+          <GrNotes className="text-6xl text-zinc-600" />
+
+          <h1 className="text-xl font-semibold mt-6">
+            Nenhuma implementação ativa
+          </h1>
+
+          <p className="text-sm">
+            Você será notificado quando receber novas implementações
+          </p>
+        </div>
+      </div>
+
       {/* card fechado */}
       <div className="w-full mb-5 rounded-xl border border-blue-700/30 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 px-6 py-5 shadow-md">
         <div className="flex items-center justify-between hover:bg-slate-800/20 ">
@@ -134,12 +148,13 @@ export default function PendingImplantion() {
             </div>
             <div>
               <h1 className="flex font-bold items-center gap-2 text-white text-xl  mb-4 mt-6">
-                <FiMessageSquare/>
+                <FiMessageSquare />
                 Descrição
               </h1>
               <Textarea
                 placeholder="Descreva em detalhes o que foi feito, discutido ou observado"
-               className="h-[180px] border border-slate-700 bg-slate-800/10 text-zinc-200 !text-xl !font-bold !placeholder:text-xl px-5 py-5"/>
+                className="h-[180px] border border-slate-700 bg-slate-800/10 text-zinc-200 !text-xl !font-bold !placeholder:text-xl px-5 py-5"
+              />
             </div>
             <Button className="flex items-center gap-2 mt-6 bg-blue-900 py-6 hover:bg-blue-800/70 text-xl">
               <MdAdd className="!w-6 !h-6 text-white" />

@@ -33,7 +33,7 @@ export default function NavbarGym() {
       <div className="pb-7 flex justify-between">
         <section>
           <h1 className="text-5xl font-extrabold font-serif text-zinc-100 mb-4">
-            Gerenciador de Academias
+            Ganhos por academias
           </h1>
           <p className="text-lg font-sans text-zinc-200">
             Gerenciando academias que foram conectadas e configuradas.

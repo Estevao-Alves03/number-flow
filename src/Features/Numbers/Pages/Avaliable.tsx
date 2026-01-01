@@ -129,7 +129,7 @@ export default function Avaliable() {
                         value={nameGym}
                         onChange={(e) => setNameGym(e.target.value)}
                         placeholder="Nome da empresa"
-                        className="px-3 py-2 rounded-lg bg-slate-900 border border-blue-700/40 text-zinc-100 focus:ring-2 focus:ring-blue-600"
+                        className="px-3 py-2 rounded-lg bg-slate-900/50 border border-blue-700/40 text-zinc-100 focus:ring-2 focus:ring-blue-600"
                       />
 
                       <label className="text-zinc-400">CNPJ</label>
@@ -139,19 +139,19 @@ export default function Avaliable() {
                           setCnpj(formatCnpj(e.target.value))
                         }
                         placeholder="00.000.000/0000-00"
-                        className="px-3 py-2 rounded-lg bg-slate-900 border border-blue-700/40 text-zinc-100 focus:ring-2 focus:ring-blue-600"
+                        className="px-3 py-2 rounded-lg bg-slate-900/50 border border-blue-700/40 text-zinc-100 focus:ring-2 focus:ring-blue-600"
                       />
 
                       <label className="text-zinc-400">Implantador</label>
                       <Select onValueChange={setDeployer}>
-                        <SelectTrigger className="bg-slate-900 border border-blue-700/40 text-zinc-100">
+                        <SelectTrigger className="bg-slate-900/50 border border-blue-700/40 text-zinc-100">
                           <SelectValue placeholder="Selecione" />
                         </SelectTrigger>
-                        <SelectContent className="bg-slate-800 text-zinc-100">
+                        <SelectContent className="bg-white text-zinc-950">
                           <SelectGroup>
-                            <SelectItem value="João">João</SelectItem>
-                            <SelectItem value="Rayck">Rayck</SelectItem>
-                            <SelectItem value="Ellias">Ellias</SelectItem>
+                            <SelectItem value="João" className="cursor-pointer data-[highlighted]:bg-blue-600 data-[highlighted]:text-white">João</SelectItem>
+                            <SelectItem value="Rayck" className="cursor-pointer data-[highlighted]:bg-blue-600 data-[highlighted]:text-white">Rayck</SelectItem>
+                            <SelectItem value="Ellias" className="cursor-pointer data-[highlighted]:bg-blue-600 data-[highlighted]:text-white">Ellias</SelectItem>
                           </SelectGroup>
                         </SelectContent>
                       </Select>

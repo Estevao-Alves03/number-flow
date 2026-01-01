@@ -1,4 +1,4 @@
-import { FiChevronsDown } from "react-icons/fi";
+import { FiCheckCircle, FiChevronsDown } from "react-icons/fi";
 import { FiChevronsUp } from "react-icons/fi";
 import { FiRefreshCcw } from "react-icons/fi";
 // // import { GrNotes } from "react-icons/gr";
@@ -7,6 +7,20 @@ import { FiRefreshCcw } from "react-icons/fi";
 export default function CompletedImplantation() {
   return (
     <div className=" mt-7 pb-16">
+      <div className="rounded-xl border-2 border-blue-700/30 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 p-20 text-center text-zinc-400 mb-6">
+        <div className="flex flex-col items-center gap-2">
+          <FiCheckCircle className="text-6xl text-zinc-600" />
+
+          <h1 className="text-xl font-semibold mt-6">
+            Nenhuma implementação concluída
+          </h1>
+
+          <p className="text-sm">
+            Suas implantações finalizadas aparecerão aqui
+          </p>
+        </div>
+      </div>
+
       {/* card fechado */}
       <div className="w-full mb-5 rounded-xl border border-blue-700/30 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 px-6 py-5 shadow-md">
         <div className="flex items-center justify-between hover:bg-slate-800/20 ">

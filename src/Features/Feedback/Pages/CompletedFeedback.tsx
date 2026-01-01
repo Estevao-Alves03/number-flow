@@ -1,13 +1,28 @@
 import { FiChevronsDown, FiChevronsUp, FiRefreshCcw } from "react-icons/fi";
 import { LiaStarSolid } from "react-icons/lia";
+import { FiCheckCircle } from "react-icons/fi";
 
 export default function CompletedFeedback() {
   return (
     <div>
+      <div className="rounded-xl border-2 border-violet-700/30 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 p-20 text-center text-zinc-400 mb-6">
+        <div className="flex flex-col items-center gap-2">
+          <FiCheckCircle className="text-6xl text-zinc-600" />
+
+          <h1 className="text-xl font-semibold mt-6">
+            Nenhum feedback concluído
+          </h1>
+
+          <p className="text-sm">
+            Os feedbacks finalizados aparecerão aqui com todas as informações
+            coletadas
+          </p>
+        </div>
+      </div>
+
       {/* card fechado */}
       <div className="w-full mb-5 rounded-xl border border-violet-700 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 px-6 py-5 shadow-md">
         <div className="flex items-center justify-between hover:bg-slate-800/20 ">
-         
           <div className="space-y-2 mt-3 p-2 ">
             <div className="flex items-center gap-3">
               <h2 className="text-3xl font-semibold text-white">
@@ -30,12 +45,11 @@ export default function CompletedFeedback() {
             </div>
           </div>
 
-          
           <FiChevronsDown className="w-8 h-8 text-zinc-400" />
         </div>
         <hr className="border-slate-700/45 mt-7 mb-2" />
       </div>
-      
+
       {/* card aberto */}
       <div className="w-full rounded-xl border border-violet-700 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 px-6 py-5 shadow-md">
         <div className="flex items-center justify-between hover:bg-slate-800/20">
@@ -91,7 +105,6 @@ export default function CompletedFeedback() {
               Lorem Ipsum.
             </p>
             <section className="px-8 mb-4 text-base font-medium flex flex-wrap gap-3">
-            
               <span className="px-3 py-1 bg-green-500/20 text-green-400 rounded-full">
                 Respostas rápidas 24h
               </span>
@@ -102,7 +115,6 @@ export default function CompletedFeedback() {
                 Atendimento padronizado e eficiente
               </span>
 
-             
               <span className="px-3 py-1 bg-red-500/20 text-red-400 rounded-full">
                 Pode falhar em perguntas muito específicas
               </span>
@@ -113,7 +125,6 @@ export default function CompletedFeedback() {
                 Não substitui 100% o humano
               </span>
 
-             
               <span className="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full">
                 Melhorar compreensão de contexto
               </span>
@@ -292,7 +303,6 @@ export default function CompletedFeedback() {
               </span>
             </div>
             <section className="px-8 py-4 grid grid-cols-3 gap-4">
-              
               <div>
                 <h1 className="text-2xl font-medium">
                   Satisfação com o produto:
@@ -305,7 +315,7 @@ export default function CompletedFeedback() {
                   <LiaStarSolid className="" />
                 </section>
               </div>
-              
+
               <div>
                 <h1 className="text-2xl font-medium">
                   Satisfação com a implantação:
@@ -318,7 +328,7 @@ export default function CompletedFeedback() {
                   <LiaStarSolid className="text-yellow-500" />
                 </section>
               </div>
-              
+
               <div>
                 <h1 className="text-2xl font-medium">
                   O cliente recomendaria o produto?

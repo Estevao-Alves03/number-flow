@@ -32,7 +32,7 @@ export default function AllUsers() {
             <div className="flex justify-between items-center">
               {/* PERFIL */}
               <div className="flex items-center gap-4">
-                <div className="w-16 h-16 rounded-full bg-blue-600" />
+                <div className="w-16 h-16 rounded-full bg-gradient-to-tr from-blue-500 via-violet-600" />
                 <div>
                   <h1 className="flex items-center gap-2 text-xl font-bold text-white">
                     Estevão
@@ -77,7 +77,7 @@ export default function AllUsers() {
             <div className="flex justify-between items-center">
               {/* PERFIL */}
               <div className="flex items-center gap-4">
-                <div className="w-16 h-16 rounded-full bg-blue-600" />
+                <div className="w-16 h-16 rounded-full bg-gradient-to-tr from-blue-500 via-violet-600" />
                 <div>
                   <h1 className="flex items-center gap-2 text-xl font-bold text-white">
                     Rayck
@@ -122,7 +122,7 @@ export default function AllUsers() {
             <div className="flex justify-between items-center">
               {/* PERFIL */}
               <div className="flex items-center gap-4">
-                <div className="w-16 h-16 rounded-full bg-blue-600" />
+                <div className="w-16 h-16 rounded-full bg-gradient-to-tr from-blue-500 via-violet-600" />
                 <div>
                   <h1 className="flex items-center gap-2 text-xl font-bold text-white">
                     Cassia

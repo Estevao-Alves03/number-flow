@@ -18,11 +18,26 @@ import { LiaStarSolid } from "react-icons/lia";
 import { Checkbox } from "../../../components/ui/checkbox";
 import { Label } from "../../../components/ui/label";
 import { FiCheckCircle } from "react-icons/fi";
-
+import { TbClock } from "react-icons/tb";
 
 export default function PendingFeedback() {
   return (
     <div>
+      <div className="rounded-xl border-2 border-violet-700/30 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 p-20 text-center text-zinc-400 mb-6">
+        <div className="flex flex-col items-center gap-2">
+          <TbClock className="text-6xl text-zinc-600" />
+
+          <h1 className="text-xl font-semibold mt-6">
+            Nenhum feedback pendente
+          </h1>
+
+          <p className="text-sm">
+            Os feedbacks aparecerão aqui quando chegar o dia de entrar em
+            contato com o cliente
+          </p>
+        </div>
+      </div>
+
       {/* academia que deve mandar mensagem no dia - card fechado*/}
       <div className="w-full mb-4 rounded-xl bg-white p-6 border-4 border-violet-600/90 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 shadow-md">
         <div className="text-white flex items-center justify-between px-4 pb-2">
@@ -53,10 +68,10 @@ export default function PendingFeedback() {
             <span className="text-zinc-300 mt-1">19/12/2025</span>
           </section>
         </div>
-      </div> 
+      </div>
 
       {/* card aberto - 3 a 15 dias*/}
-       <div className="w-full rounded-xl border-4 border-violet-600/90 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 px-6 py-5 shadow-md ">
+      <div className="w-full rounded-xl border-4 border-violet-600/90 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 px-6 py-5 shadow-md ">
         <div className="flex items-center justify-between hover:bg-slate-800/20">
           <div className="space-y-2 mt-3 p-2">
             <div className="flex items-center gap-3">
@@ -76,7 +91,6 @@ export default function PendingFeedback() {
             </div>
           </div>
 
-         
           <FiChevronsUp className="w-8 h-8 text-zinc-400" />
         </div>
         <hr className="border-slate-700/45 mt-7 mb-16" />
@@ -128,12 +142,10 @@ export default function PendingFeedback() {
             </Button>
           </CardContent>
         </Card>
-      </div>  
+      </div>
 
-  
       <div className="w-full mt-4 rounded-xl border-4 border-violet-600/90 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 px-6 py-5 shadow-md ">
         <div className="flex items-center justify-between hover:bg-slate-800/20">
-         
           <div className="space-y-2 mt-3 p-2">
             <div className="flex items-center gap-3">
               <h2 className="text-3xl font-semibold text-white">
@@ -152,7 +164,6 @@ export default function PendingFeedback() {
             </div>
           </div>
 
-        
           <FiChevronsUp className="w-8 h-8 text-zinc-400" />
         </div>
         <hr className="border-slate-700/45 mt-7 mb-16" />
@@ -250,7 +261,7 @@ export default function PendingFeedback() {
             </Button>
           </CardContent>
         </Card>
-      </div> 
+      </div>
     </div>
   );
 }
