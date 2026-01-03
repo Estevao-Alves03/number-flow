@@ -43,7 +43,7 @@ export default function NavbarDeployment() {
               <span className="text-4xl font-bold text-white">R$ 00,00</span>
             </div>
             <p className="text-2xl text-green-50 font-bold">Mẽs Atual</p>
-            <p className="text-lg text-green-100">0 treinamentos</p>
+            <p className="text-lg text-green-100">0 Implantações</p>
           </CardContent>
         </Card>
 
@@ -69,7 +69,7 @@ export default function NavbarDeployment() {
               <span className="text-4xl font-bold text-white">0</span>
             </div>
             <p className="text-2xl text-orange-50 font-bold">
-              Treinamentos
+              Implantações
             </p>
             <p className="text-lg text-orange-100">total realizados</p>
           </CardContent>

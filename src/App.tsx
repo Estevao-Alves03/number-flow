@@ -3,9 +3,9 @@ import  {NavbarNumber, AddNumbers, LinkedWithSearch, Avaliable} from "./Features
 import { NavbarDashboard, GraphicsDashboard, Activities } from "./Features/Dashboard/Index";
 import { NavbarImplantation, Implantations } from "./Features/Implantantion/Index";
 import { NavbarFeedback, CrmFeedback } from "./Features/Feedback/Index";
-import { NavbarGym, CompletedGyms } from "./Features/ConnectionGains/Index";
+// import { NavbarGym, CompletedGyms } from "./Features/ConnectionGains/Index";
 import { NavbarUsers, AllUsers, AddUser } from "./Features/Users/Index";
-import { NavbarDeployment, GraphicsDeployment, AddGym, TrainingHistory } from "./Features/DeploymentGains/Index";
+import { NavbarDeployment, GraphicsDeployment, AddGym, TrainingHistory } from "./Features/MyEarnings/Index";
 
 // ---- Componentes usados 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./components/ui/tabs";
@@ -29,8 +29,8 @@ function App() {
             <TabsTrigger value="Numbers" className="px-4 py-2 text-base font-bold text-white data-[state=active]:bg-blue-700 data-[state=active]:text-white data-[state=inactive]:bg-slate-800">Numbers</TabsTrigger>
             <TabsTrigger value="Implantation" className="px-4 py-2 text-base font-bold text-white data-[state=active]:bg-blue-700 data-[state=active]:text-white data-[state=inactive]:bg-slate-800">Implantation</TabsTrigger>
             <TabsTrigger value="Feedback" className="px-4 py-2 text-base font-bold text-white data-[state=active]:bg-blue-700 data-[state=active]:text-white data-[state=inactive]:bg-slate-800">Feedback - CS</TabsTrigger>
-            <TabsTrigger value="ConnectionGains" className="px-4 py-2 text-base font-bold text-white data-[state=active]:bg-blue-700 data-[state=active]:text-white data-[state=inactive]:bg-slate-800">Connection Gains</TabsTrigger>
-            <TabsTrigger value="DeploymentGains" className="px-4 py-2 text-base font-bold text-white data-[state=active]:bg-blue-700 data-[state=active]:text-white data-[state=inactive]:bg-slate-800">Deployment Gains</TabsTrigger>
+            {/* <TabsTrigger value="ConnectionGains" className="px-4 py-2 text-base font-bold text-white data-[state=active]:bg-blue-700 data-[state=active]:text-white data-[state=inactive]:bg-slate-800">Connection Gains</TabsTrigger> */}
+            <TabsTrigger value="MyEarnings" className="px-4 py-2 text-base font-bold text-white data-[state=active]:bg-blue-700 data-[state=active]:text-white data-[state=inactive]:bg-slate-800">My Earnings</TabsTrigger>
             <TabsTrigger value="Users" className="px-4 py-2 text-base font-bold text-white data-[state=active]:bg-blue-700 data-[state=active]:text-white data-[state=inactive]:bg-slate-800">Users</TabsTrigger>
           </TabsList>
 
@@ -82,11 +82,11 @@ function App() {
          <NavbarFeedback/>
          <CrmFeedback/>
         </TabsContent>
-        <TabsContent value="ConnectionGains">
+        {/* <TabsContent value="ConnectionGains">
           <NavbarGym/>
           <CompletedGyms/>
-        </TabsContent>
-        <TabsContent value="DeploymentGains">
+        </TabsContent> */}
+        <TabsContent value="MyEarnings">
           <NavbarDeployment/>
           <GraphicsDeployment/>
           <AddGym/>
