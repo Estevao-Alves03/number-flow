@@ -1,8 +1,12 @@
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../../../components/ui/select";
+import { Button } from "../../../components/ui/button";
 import { Card, CardContent } from "../../../components/ui/card";
 import { FiTrendingUp } from "react-icons/fi";
 import { LiaStarSolid } from "react-icons/lia";
 import { MdAttachMoney } from "react-icons/md";
 import { TbActivityHeartbeat } from "react-icons/tb";
+import { PiDownloadSimpleBold } from "react-icons/pi";
+
 
 export default function NavbarDeployment() {
   return (
@@ -16,6 +20,32 @@ export default function NavbarDeployment() {
             Controle de bonificações por treinamento e avaliação.
           </p>
         </section>
+        <section className="flex gap-3">
+          <Select>
+            <SelectTrigger className="w-[180px] h-[47px] bg-slate-900/500 border !border-zinc-100/40 !text-white rounded-lg text-base">
+              <SelectValue placeholder="Mẽs" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="janeiro" className="cursor-pointer data-[highlighted]:bg-blue-600 data-[highlighted]:text-white font-bold text-base">janeiro</SelectItem>
+              <SelectItem value="fevereiro"className="cursor-pointer data-[highlighted]:bg-blue-600 data-[highlighted]:text-white font-bold text-base">fevereiro</SelectItem>
+              <SelectItem value="março"className="cursor-pointer data-[highlighted]:bg-blue-600 data-[highlighted]:text-white font-bold text-base">março</SelectItem>
+            </SelectContent>
+          </Select>
+          <Select>
+            <SelectTrigger className="w-[180px] h-[47px] bg-slate-900/500 border !border-zinc-100/40 !text-white rounded-lg text-base">
+              <SelectValue placeholder="Ano" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="2024"className="cursor-pointer data-[highlighted]:bg-blue-600 data-[highlighted]:text-white font-bold text-base">2024</SelectItem>
+              <SelectItem value="2025"className="cursor-pointer data-[highlighted]:bg-blue-600 data-[highlighted]:text-white font-bold text-base">2025</SelectItem>
+              <SelectItem value="2026"className="cursor-pointer data-[highlighted]:bg-blue-600 data-[highlighted]:text-white font-bold text-base">2026</SelectItem>
+            </SelectContent>
+          </Select>
+          <Button className="h-[47px] bg-green-600 font-bold text-base hover:bg-green-700">
+            <PiDownloadSimpleBold />
+            Exportar CSV
+          </Button>
+        </section>
       </div>
 
       <div className="grid grid-cols-4 gap-6">
@@ -27,9 +57,7 @@ export default function NavbarDeployment() {
               <FiTrendingUp className="w-10 h-10 text-blue-50" />
               <span className="text-4xl font-bold text-white">R$ 00,00</span>
             </div>
-            <p className="text-2xl text-blue-50 font-bold">
-              Ganho Total
-            </p>
+            <p className="text-2xl text-blue-50 font-bold">Ganho Total</p>
             <p className="text-lg text-blue-100">valor acumulado</p>
           </CardContent>
         </Card>
@@ -68,9 +96,7 @@ export default function NavbarDeployment() {
               <TbActivityHeartbeat className="w-10 h-10 text-orange-50" />
               <span className="text-4xl font-bold text-white">0</span>
             </div>
-            <p className="text-2xl text-orange-50 font-bold">
-              Implantações
-            </p>
+            <p className="text-2xl text-orange-50 font-bold">Implantações</p>
             <p className="text-lg text-orange-100">total realizados</p>
           </CardContent>
         </Card>

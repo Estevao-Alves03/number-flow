@@ -9,9 +9,9 @@ export default function NewsFeedback() {
         <div className="flex flex-col items-center gap-2">
           <TbPlus className="text-6xl text-zinc-600" />
 
-          <h1 className="text-xl font-semibold mt-6">Nenhum feedback novo</h1>
+          <h1 className="text-2xl font-semibold mt-6">Nenhum feedback novo</h1>
 
-          <p className="text-sm">
+          <p className="text-base">
             Novos feedbacks aparecerão aqui quando implementações forem
             concluídas
           </p>
@@ -22,11 +22,11 @@ export default function NewsFeedback() {
         <div className="text-white flex items-center justify-between px-4 pb-2">
           <h1 className="text-3xl font-bold flex gap-3">
             Acad Acuas Fit
-            <span className="rounded-xl bg-blue-900/70 px-2.5 text-lg flex items-center">
+            <span className="rounded-full bg-blue-900/70 px-2.5 py-1.5 text-lg flex items-center font-bold">
               Novo
             </span>
           </h1>
-          <Button className="bg-zinc-700 hover:bg-zinc-700 text-xl px-6 py-5">
+          <Button className="bg-zinc-700 hover:bg-zinc-700 text-xl px-6 py-5" disabled>
             Coletar feedback
           </Button>
         </div>

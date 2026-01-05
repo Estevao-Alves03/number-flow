@@ -3,7 +3,7 @@ import { FaPhone } from "react-icons/fa6";
 import { FiCheckCircle } from "react-icons/fi";
 import { FiTarget } from "react-icons/fi";
 import { TfiTime } from "react-icons/tfi";
-import { IoAlertCircleOutline } from "react-icons/io5";
+// import { IoAlertCircleOutline } from "react-icons/io5";
 
 export default function NavbarDashboard() {
   return (
@@ -18,7 +18,7 @@ export default function NavbarDashboard() {
         </p>
       </section>
 
-      <Card className="p-5 mb-10 rounded-xl border-none bg-gradient-to-br from-violet-700/55 to-violet-700/55  relative overflow-hidden shadow-xl">
+      {/* <Card className="p-5 mb-10 rounded-xl border-none bg-gradient-to-br from-violet-700/55 to-violet-700/55  relative overflow-hidden shadow-xl">
         <div className="absolute top-0 right-0 w-44 h-44 bg-white/10 rounded-full -mr-20 -mt-20" />
         <CardContent className="pt-6 mt-3 relative z-10">
           <div className="flex items-center gap-4 mb-4">
@@ -35,7 +35,7 @@ export default function NavbarDashboard() {
             </div>
           </div>
         </CardContent>
-      </Card>
+      </Card> */}
 
       {/* GRID DE CARDS */}
       <div className="grid grid-cols-4 gap-6">

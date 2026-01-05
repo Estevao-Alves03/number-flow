@@ -35,20 +35,20 @@ export default function AddGym() {
           <section>
             <h1 className="text-zinc-400 text-lg mb-2">Tipo</h1>
             <Select defaultValue="gymbot">
-              <SelectTrigger className="w-[280px] bg-slate-900/50 border border-blue-700/40 text-zinc-100 font-bold">
+              <SelectTrigger className="w-[280px] h-[50px] bg-slate-900/500 border border-blue-700/40 text-zinc-100 rounded-lg text-base font-bold">
                 <SelectValue />
               </SelectTrigger>
               <SelectContent className="bg-white text-zinc-950">
                 <SelectGroup>
                   <SelectItem
                     value="gymbot"
-                    className="cursor-pointer data-[highlighted]:bg-blue-600 data-[highlighted]:text-white font-bold"
+                    className="cursor-pointer data-[highlighted]:bg-blue-600 data-[highlighted]:text-white font-bold text-base"
                   >
                     Gymbot (R$ 40,00)
                   </SelectItem>
                   <SelectItem
                     value="musicfit"
-                    className="cursor-pointer data-[highlighted]:bg-blue-600 data-[highlighted]:text-white font-bold"
+                    className="cursor-pointer data-[highlighted]:bg-blue-600 data-[highlighted]:text-white font-bold text-base"
                   >
                     Music Fit (R$ 15,00)
                   </SelectItem>
@@ -58,10 +58,10 @@ export default function AddGym() {
           </section>
           {/* Academia */}
           <section className="">
-            <h1 className="text-zinc-400 text-lg mb-2">Nome da Academia</h1>
+            <h1 className="text-zinc-400 text-lg mb-2 ">Nome da Academia</h1>
             <Input
               placeholder="Digite o nome aqui"
-              className="bg-slate-900/50 border border-blue-700/40 text-zinc-100 font-bold"
+              className="h-[50px] bg-slate-950/10 border border-blue-700/40 text-zinc-100 rounded-lg !text-base font-bold placeholder:text-base"
             />
           </section>
           {/* CNPJ */}
@@ -69,7 +69,7 @@ export default function AddGym() {
             <h1 className="text-zinc-400 text-lg mb-2">CNPJ</h1>
             <Input
               placeholder="00.000.000/0000-00"
-              className="bg-slate-900/50 border border-blue-700/40 text-zinc-100 font-bold"
+              className="h-[50px] bg-slate-950/10 border border-blue-700/40 text-zinc-100 rounded-lg !text-base font-bold placeholder:text-base"
             />
           </section>
           {/* Nota */}
@@ -77,12 +77,12 @@ export default function AddGym() {
             <h1 className="text-zinc-400 text-lg mb-2">Nota (Opcional)</h1>
             <Input
               placeholder="1-10"
-              className="bg-slate-900/50 border border-blue-700/40 text-zinc-100 font-bold"
+              className="h-[50px] bg-slate-950/10 border border-blue-700/40 text-zinc-100 rounded-lg !text-base font-bold placeholder:text-base"
             />
           </section>
           {/* Botao */}
           <section className="flex items-end justify-end">
-            <Button className="w-[280px] bg-amber-700 hover:bg-amber-800 text-white font-medium">
+            <Button className="w-[280px] h-[50px] bg-amber-700 hover:bg-amber-800 text-white font-bold text-lg">
               Concluir
             </Button>
           </section>

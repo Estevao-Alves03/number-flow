@@ -83,7 +83,7 @@ export default function Avaliable() {
   }
 
   return (
-    <div className="px-44 py-14">
+    <div className="px-44 py-14 pb-24">
       <h1 className="text-3xl font-extrabold text-zinc-100 mb-2">
         Números Disponíveis
       </h1>
@@ -94,11 +94,11 @@ export default function Avaliable() {
       {availableNumbers.length === 0 ? (
         <div className="pt-8">
           <div className="border border-blue-700/30 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 rounded-xl py-16 text-center text-zinc-400 ">
-            <h2 className="text-xl font-semibold mb-2">
+            <h2 className="text-2xl font-semibold mb-2">
               Nenhum número disponível
             </h2>
-            <p className="text-sm">
-              Todos os números já estão vinculados.
+            <p className="text-base">
+              Todos os números já estão vinculados ou ainda não foram cadastrados.
             </p>
           </div>
         </div>
@@ -119,12 +119,12 @@ export default function Avaliable() {
               >
                 {openCard === item.id ? (
                   <div onClick={(e) => e.stopPropagation()}>
-                    <h1 className="text-xl text-blue-400 font-bold">
+                    <h1 className="text-2xl text-blue-400 font-bold">
                       {item.number}
                     </h1>
 
                     <form className="flex flex-col gap-2 mt-4">
-                      <label className="text-zinc-400">Empresa</label>
+                      <label className="text-zinc-300 font-medium text-base pt-2">Empresa</label>
                       <input
                         value={nameGym}
                         onChange={(e) => setNameGym(e.target.value)}
@@ -132,7 +132,7 @@ export default function Avaliable() {
                         className="px-3 py-2 rounded-lg bg-slate-900/50 border border-blue-700/40 text-zinc-100 focus:ring-2 focus:ring-blue-600"
                       />
 
-                      <label className="text-zinc-400">CNPJ</label>
+                      <label className="text-zinc-300 font-medium text-base pt-2">CNPJ</label>
                       <input
                         value={cnpj}
                         onChange={(e) =>
@@ -142,9 +142,9 @@ export default function Avaliable() {
                         className="px-3 py-2 rounded-lg bg-slate-900/50 border border-blue-700/40 text-zinc-100 focus:ring-2 focus:ring-blue-600"
                       />
 
-                      <label className="text-zinc-400">Implantador</label>
+                      <label className="text-zinc-300 font-medium text-base pt-2">Implantador</label>
                       <Select onValueChange={setDeployer}>
-                        <SelectTrigger className="bg-slate-900/50 border border-blue-700/40 text-zinc-100">
+                        <SelectTrigger className="bg-slate-900/50 h-[45px] border border-blue-700/40 text-zinc-100">
                           <SelectValue placeholder="Selecione" />
                         </SelectTrigger>
                         <SelectContent className="bg-white text-zinc-950">
@@ -161,7 +161,7 @@ export default function Avaliable() {
                       <Button
                         disabled={!isValidForm()}
                         onClick={() => handleLink(item.id)}
-                        className="bg-blue-600 hover:bg-blue-700 text-white"
+                        className="bg-blue-600 hover:bg-blue-700 h-[40px] text-white"
                       >
                         <IoCheckmarkSharp /> Vincular
                       </Button>
@@ -169,7 +169,7 @@ export default function Avaliable() {
                       <Button
                         variant="outline"
                         onClick={() => setOpenCard(null)}
-                        className="border-slate-600 text-black bg-white hover:bg-slate-300"
+                        className="border-slate-600 h-[40px] text-black bg-white hover:bg-slate-300"
                       >
                         <IoCloseOutline /> Cancelar
                       </Button>
@@ -187,11 +187,11 @@ export default function Avaliable() {
                       <IoCloseOutline size={18} />
                     </button>
 
-                    <h1 className="text-xl text-zinc-100 flex items-center justify-center gap-2">
+                    <h1 className="text-2xl text-zinc-100 flex items-center justify-center gap-2">
                       <FaPhone className="text-blue-400 bg-blue-500/10 rounded-lg p-1.5" />
                       {item.number}
                     </h1>
-                    <p className="text-xs text-zinc-400">
+                    <p className="text-base text-zinc-400">
                       Clique para vincular
                     </p>
                   </div>

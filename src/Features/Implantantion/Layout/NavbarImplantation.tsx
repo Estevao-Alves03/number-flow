@@ -17,7 +17,7 @@ export default function NavbarImplantation() {
         </section>
       </div>
 
-      <div className="grid grid-cols-2 gap-4 pb-2">
+      <div className="grid grid-cols-2 gap-4 pb-1">
         <Card className="p-4 rounded-xl bg-gradient-to-br from-blue-700/55 to-blue-700/55  border-none backdrop-blur relative overflow-hidden shadow-xl">
           <div className="absolute top-0 right-0 w-44 h-44 bg-white/10 rounded-full -mr-20 -mt-20" />
           <CardContent className="pt-14 relative z-10">

@@ -4,7 +4,9 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-    plugins: [require("tailwindcss-animate")],
+    plugins: [require("tailwindcss-animate"),
+		  require("tailwind-scrollbar"),
+	],
     theme: {
     	extend: {
     		borderRadius: {

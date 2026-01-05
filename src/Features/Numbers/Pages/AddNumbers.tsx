@@ -67,9 +67,9 @@ export default function AddNumbers() {
           onClick={() => setOpen(!open)}
           className="
             bg-gradient-to-br from-blue-700 via-blue-600 to-blue-700
-            text-white font-semibold text-base
+            text-white font-bold text-base
             hover:from-blue-600 hover:to-blue-800
-            shadow-lg
+            shadow-lg h-[40px]
           "
         >
           {open ? "Fechar" : "Adicionar Números"}
@@ -87,7 +87,7 @@ export default function AddNumbers() {
           "
         >
           <div className="flex flex-col gap-4">
-            <label className="text-base font-bold text-blue-300">
+            <label className="text-base font-bold text-white">
               Cole os números (um por linha)
             </label>
 
@@ -110,9 +110,9 @@ export default function AddNumbers() {
               className="
                 self-start rounded-lg
                 bg-gradient-to-br from-blue-700 via-blue-600 to-blue-700
-                px-5 py-2 text-sm font-semibold text-white
+                px-5 text-sm font-bold text-white
                 hover:from-blue-600 hover:to-blue-800
-                shadow-lg
+                shadow-lg h-[40px]
               "
             >
               Adicionar Números

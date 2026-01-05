@@ -1,31 +1,27 @@
-import { Card } from "../../../components/ui/card";
 import { Button } from "../../../components/ui/button";
-import { FiCheckCircle, FiChevronsDown } from "react-icons/fi";
-import { FiChevronsUp } from "react-icons/fi";
-import { FiRefreshCcw } from "react-icons/fi";
-// // import { GrNotes } from "react-icons/gr";
-// import { Button } from "../components/ui/button";
+import { Card } from "../../../components/ui/card";
+import { FiChevronsDown, FiChevronsUp, FiClock, FiRefreshCcw } from "react-icons/fi";
 
-export default function CompletedImplantation() {
+export default function StalledDeployments() {
   return (
-    <div className=" mt-7 pb-24">
+    <div className="mt-7 pb-24">
       <div className="rounded-xl border-2 border-blue-700/30 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 p-20 text-center text-zinc-400 mb-6">
         <div className="flex flex-col items-center gap-2">
-          <FiCheckCircle className="text-6xl text-zinc-600" />
+          <FiClock className="text-6xl text-zinc-600" />
 
           <h1 className="text-2xl font-semibold mt-6">
-            Nenhuma implementação concluída
+            Nenhuma implantação parada
           </h1>
 
           <p className="text-base">
-            Suas implantações finalizadas aparecerão aqui
+            As implantações que foram paradas aparecerão aqui, e você poderá dar
+            continuidade a qualquer momento
           </p>
         </div>
       </div>
 
-      {/* card fechado */}
       <Card className="w-full mb-5 rounded-xl border border-blue-700/30 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 px-6 py-5 shadow-md">
-        <div className="flex items-start justify-between">
+        <div className="flex items-start justify-between ">
           {/* Lado esquerdo */}
           <div className="space-y-2 mt-3 p-2 ">
             <div className="flex items-center gap-3">
@@ -33,8 +29,8 @@ export default function CompletedImplantation() {
                 teste de acad
               </h2>
 
-              <span className="rounded-full bg-green-500/60 px-4 py-1.5 text-lg font-bold text-white">
-                Concluída
+              <span className="rounded-full bg-zinc-500/50 px-4 py-1.5 text-lg font-bold text-white">
+                Parado
               </span>
             </div>
 
@@ -43,21 +39,28 @@ export default function CompletedImplantation() {
               <span>•</span>
               <span>Iniciado: 16/12/2025</span>
               <span>•</span>
-              <span>Concluído em: 24/12/2025</span>
+              <span>Parado: 19/12/2025</span>
               <span>•</span>
-              <span>6 anotações</span>
+              <span>4 anotações</span>
             </div>
           </div>
 
           {/* Ícone */}
-           <Button className="mt-4 text-white font-bold rounded-lg text-lg py-5 px-4 flex items-center gap-2 bg-blue-500/40 hover:bg-blue-500/20">
-            <FiChevronsDown className="!w-6 !h-6" />
-          </Button>
+          <section className="flex gap-3">
+            <Button className="mt-4 text-white font-bold rounded-lg text-lg py-5 px-4 flex items-center gap-2 bg-blue-500/40 hover:bg-blue-500/20">
+              Retomar implantação
+            </Button>
+            <Button className="mt-4 text-white font-bold rounded-lg text-lg py-5 px-4 flex items-center gap-2 bg-blue-500/40 hover:bg-blue-500/20">
+              <FiChevronsDown className="!w-6 !h-6" />
+            </Button>
+          </section>
         </div>
+
         <hr className="border-slate-700/45 mt-7 mb-2" />
       </Card>
-      {/* card aberto */}
-      <Card className="w-full rounded-xl border border-blue-700/30 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 px-6 py-5 shadow-md">
+
+
+       <Card className="w-full rounded-xl border border-blue-700/30 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 px-6 py-5 shadow-md">
         <div className="flex items-start justify-between">
           {/* Lado esquerdo */}
           <div className="space-y-2 mt-3 p-2">
@@ -66,8 +69,8 @@ export default function CompletedImplantation() {
                 teste de acad
               </h2>
 
-              <span className="rounded-full bg-green-500/60 px-4 py-1.5 text-lg font-bold text-white">
-                Concluída
+              <span className="rounded-full bg-zinc-500/60 px-4 py-1.5 text-lg font-bold text-white">
+                Parado
               </span>
             </div>
 
@@ -76,9 +79,9 @@ export default function CompletedImplantation() {
               <span>•</span>
               <span>Iniciado: 16/12/2025</span>
               <span>•</span>
-              <span>Concluído em: 24/12/2025</span>
+              <span>Parado: 19/12/2025</span>
               <span>•</span>
-              <span>6 anotações</span>
+              <span>4 anotações</span>
             </div>
           </div>
 
@@ -164,7 +167,7 @@ export default function CompletedImplantation() {
           <Card className="border border-blue-700/30 bg-slate-900/50 shador-md mx-6 mt-5 rounded-lg">
             <div className="px-8 pt-6 pb-4 flex justify-between">
               <span className="text-lg font-bold px-4 py-1.5 bg-blue-700/55 text-white rounded-xl ">
-                Conclusao
+                Parado
               </span>
               <span className="text-xl text-zinc-200 font-semibold font-sans">
                 21/12/2025 - 14:12

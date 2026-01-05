@@ -11,53 +11,50 @@ import { default as NewsFeedback } from "./NewsFeedback";
 import { IoSearch } from "react-icons/io5";
 import { useState } from "react";
 
-
-
 export default function CrmFeedback() {
   const [searchTerm, setSearchTerm] = useState("");
 
   return (
-    <div className="px-44 pb-16">
+    <div className="px-44 pb-24">
       <Tabs defaultValue="news" className="w-full">
         {/* Tabs (largura controlada) */}
-        <TabsList className="grid !w-[630px] grid-cols-4 !h-12 rounded-xl border border-violet-700/40 bg-gradient-to-br from-slate-950 via-slate-900/50 to-slate-950 p-1">
+        <TabsList className="grid !w-[630px] grid-cols-4 !h-12 rounded-xl border border-violet-700/40 bg-gradient-to-br from-slate-950 via-slate-900/50 to-slate-950 p-1 gap-1">
           <TabsTrigger
             value="news"
-            className="h-full rounded-lg text-sm text-zinc-400 data-[state=active]:bg-violet-700/55 data-[state=active]:text-white"
+            className="h-full rounded-lg text-base text-zinc-400 data-[state=active]:bg-violet-700/55 data-[state=active]:text-white"
           >
             Novos (0)
           </TabsTrigger>
 
           <TabsTrigger
             value="pending"
-            className="h-full rounded-lg text-sm text-zinc-400 data-[state=active]:bg-violet-700/55 data-[state=active]:text-white"
+            className="h-full rounded-lg text-base text-zinc-400 data-[state=active]:bg-violet-700/55 data-[state=active]:text-white"
           >
             Pendentes (0)
           </TabsTrigger>
 
           <TabsTrigger
             value="progress"
-            className="h-full rounded-lg text-sm text-zinc-400 data-[state=active]:bg-violet-700/55 data-[state=active]:text-white"
+            className="h-full rounded-lg text-base text-zinc-400 data-[state=active]:bg-violet-700/55 data-[state=active]:text-white"
           >
             Em progresso (0)
           </TabsTrigger>
 
           <TabsTrigger
             value="completed"
-            className="h-full rounded-lg text-sm text-zinc-400 data-[state=active]:bg-violet-700/55 data-[state=active]:text-white"
+            className="h-full rounded-lg text-base text-zinc-400 data-[state=active]:bg-violet-700/55 data-[state=active]:text-white"
           >
             Concluídas (0)
           </TabsTrigger>
         </TabsList>
 
         {/* SEARCH */}
-        <section className="relative mt-6 mb-4 w-full">
+        <section className="relative mt-6 mb-4 col-span-2">
           <IoSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-violet-600" />
           <input
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            placeholder="Buscar Empresa, Implantador ou CNPJ"
-            className="w-full rounded-lg py-4 pl-10 pr-3 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 border border-violet-700/40 text-zinc-100 placeholder:text-zinc-300 focus:ring-2 focus:ring-blue-600"
+            placeholder="Buscar Empresa ou CNPJ"
+            className="w-full rounded-lg py-4 pl-10 pr-3 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 border border-violet-700/40 text-zinc-100 placeholder:text-zinc-300 placeholder:text-base
+                focus:outline-none focus:ring-0 focus:border-violet-700/40"
           />
         </section>
 

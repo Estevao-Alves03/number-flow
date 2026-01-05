@@ -9,6 +9,17 @@ import { GrNotes } from "react-icons/gr";
 import { LiaStarSolid } from "react-icons/lia";
 import { RiRobot2Line } from "react-icons/ri";
 import { TbMessageCircle, TbMusic } from "react-icons/tb";
+import { FaRegEdit } from "react-icons/fa";
+import { Button } from "../../../components/ui/button";
+import { IoSearch } from "react-icons/io5";
+import { BiFilterAlt } from "react-icons/bi";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "../../../components/ui/select";
 
 export default function TrainingHistory() {
   return (
@@ -23,7 +34,64 @@ export default function TrainingHistory() {
             Monitore suas Implantações concluídas e atribua notas para melhorar
             sua bonificação
           </CardDescription>
+
+          <div className="grid grid-cols-4 gap-6">
+            {/* pesquisa */}
+            <section className="relative mt-6 mb-4 col-span-2">
+              <IoSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-blue-600" />
+              <input
+                placeholder="Buscar Empresa ou CNPJ"
+                className="w-full rounded-lg py-4 pl-10 pr-3 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 border border-blue-700/40 text-zinc-100 placeholder:text-zinc-300 placeholder:text-base
+                focus:outline-none focus:ring-0 focus:border-blue-700/40"
+              />
+            </section>
+
+            {/* filtro por categoria */}
+            <section className="mt-6 mb-4 flex items-center gap-2">
+              <BiFilterAlt className="text-white text-4xl mr-3" />
+              <Select defaultValue="all">
+                <SelectTrigger className="h-[60px] bg-slate-900/500 border border-blue-700/40 text-zinc-100 rounded-lg text-base">
+                  <SelectValue />
+                </SelectTrigger>
+
+                <SelectContent>
+                  <SelectItem
+                    value="all"
+                    className="cursor-pointer data-[highlighted]:bg-blue-600 data-[highlighted]:text-white font-bold text-base"
+                  >
+                    Todas as categorias
+                  </SelectItem>
+                  <SelectItem
+                    value="conversations"
+                    className="cursor-pointer data-[highlighted]:bg-blue-600 data-[highlighted]:text-white font-bold text-base"
+                  >
+                    Conversas AI
+                  </SelectItem>
+                  <SelectItem
+                    value="gymbot"
+                    className="cursor-pointer data-[highlighted]:bg-blue-600 data-[highlighted]:text-white font-bold text-base"
+                  >
+                    Gymbot
+                  </SelectItem>
+                  <SelectItem
+                    value="musicfit"
+                    className="cursor-pointer data-[highlighted]:bg-blue-600 data-[highlighted]:text-white font-bold text-base"
+                  >
+                    Music fit
+                  </SelectItem>
+                </SelectContent>
+              </Select>
+            </section>
+          </div>
+
+          <div>
+            <span className="text-white font-semibold text-lg">
+              3 treinamento(s) encontrado(s)
+            </span>
+          </div>
         </CardHeader>
+
+        <hr className="mb-4 border-blue-700/30" />
 
         <CardContent>
           <div className="max-h-[450px] overflow-y-auto">
@@ -74,10 +142,16 @@ export default function TrainingHistory() {
                   </div>
 
                   {/* parte 2 - avaliaçao */}
-                  <div className="flex items-center">
-                    <span className="text-zinc-100 font-semibold rounded-full px-3 py-2 bg-zinc-800/50 border-zinc-700 border">
+                  <div className="flex items-center gap-2">
+                    <span className="text-zinc-100 font-semibold rounded-xl px-3 py-2 bg-zinc-700/50">
                       Sem nota
                     </span>
+                    <Button
+                      className="rounded-xl px-4 py-5 bg-zinc-700/50"
+                      title="editar a nota"
+                    >
+                      <FaRegEdit className="text-white" />
+                    </Button>
                   </div>
                 </div>
               </Card>
@@ -127,14 +201,23 @@ export default function TrainingHistory() {
                         R$ 80,00
                       </span>
                     </div>
+                    <span className="text-amber-500 font-bold text-lg font-serif">
+                      valor dobrado!
+                    </span>
                   </div>
 
                   {/* parte 2 - avaliaçao */}
-                  <div className="flex items-center">
-                    <span className="text-zinc-100 font-semibold rounded-full px-3 py-2 bg-zinc-800/50 border-zinc-700 border flex items-center gap-2">
-                      <LiaStarSolid className="text-amber-500 text-lg"/>
+                  <div className="flex items-center gap-2">
+                    <span className="text-zinc-100 font-semibold rounded-xl px-3 py-2 bg-zinc-700/50 flex items-center gap-2">
+                      <LiaStarSolid className="text-amber-500 text-lg" />
                       Nota 08/10
                     </span>
+                    <Button
+                      className="rounded-xl px-4 py-5 bg-zinc-700/50"
+                      title="editar a nota"
+                    >
+                      <FaRegEdit className="text-white" />
+                    </Button>
                   </div>
                 </div>
               </Card>
@@ -184,14 +267,23 @@ export default function TrainingHistory() {
                         R$ 30,00
                       </span>
                     </div>
+                    <span className="text-amber-500 font-bold text-lg font-serif">
+                      valor dobrado!
+                    </span>
                   </div>
 
                   {/* parte 2 - avaliaçao */}
-                  <div className="flex items-center">
-                    <span className="text-zinc-100 font-semibold rounded-full px-3 py-2 bg-zinc-800/50 border-zinc-700 border flex items-center gap-2">
-                      <LiaStarSolid className="text-amber-500 text-lg"/>
+                  <div className="flex items-center gap-2">
+                    <span className="text-zinc-100 font-semibold rounded-xl px-3 py-2 bg-zinc-700/50 flex items-center gap-2">
+                      <LiaStarSolid className="text-amber-500 text-lg" />
                       Nota 09/10
                     </span>
+                    <Button
+                      className="rounded-xl px-4 py-5 bg-zinc-700/50"
+                      title="editar a nota"
+                    >
+                      <FaRegEdit className="text-white" />
+                    </Button>
                   </div>
                 </div>
               </Card>

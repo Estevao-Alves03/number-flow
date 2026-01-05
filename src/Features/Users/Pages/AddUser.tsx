@@ -37,71 +37,105 @@ export default function AddUser() {
         <hr className="my-4 border-blue-700/30" />
 
         <CardContent className="pt-8">
-          <div className="grid grid-cols-4 gap-4 text-zinc-100">
+          <div className="grid grid-cols-4 gap-4 text-zinc-100 ">
             <div className="space-y-2">
-              <Label>Nome completo</Label>
+              <Label className="text-lg font-bold">Nome completo</Label>
               <Input
-                placeholder="João Silva"
-                className="border border-zinc-600"
-              />
+              placeholder="Digite o nome"
+              className="h-[50px] bg-slate-950/10 border border-blue-700/40 text-zinc-100 rounded-lg !text-base font-bold placeholder:text-base"
+            />
             </div>
 
             <div className="space-y-2">
-              <Label>E-mail</Label>
-              <Input
-                placeholder="email@empresa.com"
-                className="border border-zinc-600"
-              />
+              <Label className="text-lg font-bold">E-mail</Label>
+               <Input
+              placeholder="Digite o e-mail"
+              className="h-[50px] bg-slate-950/10 border border-blue-700/40 text-zinc-100 rounded-lg !text-base font-bold placeholder:text-base"
+            />
             </div>
 
             <div className="space-y-2">
-              <Label>Tipo de acesso</Label>
+              <Label className="text-lg font-bold">Tipo de acesso</Label>
               <Select>
-                <SelectTrigger className="w-[180px] border border-zinc-600">
-                  <SelectValue placeholder="Administrador" />
+                <SelectTrigger className="w-[280px] h-[50px] bg-slate-900/500 border border-blue-700/40 text-zinc-100 rounded-lg text-base font-bold">
+                  <SelectValue placeholder="Escolha a permissão" />
                 </SelectTrigger>
-                <SelectContent className="bg-slate-800 text-zinc-200">
-                  <SelectItem value="admin">Administrador</SelectItem>
-                  <SelectItem value="implantation">Implantação</SelectItem>
-                  <SelectItem value="feedback">Feedback</SelectItem>
+                <SelectContent>
+                  <SelectItem
+                    value="admin"
+                    className="cursor-pointer data-[highlighted]:bg-blue-600 data-[highlighted]:text-white font-bold text-base"
+                  >
+                    Administrador 
+                  </SelectItem>
+                  <SelectItem
+                    value="auditor"
+                    className="cursor-pointer data-[highlighted]:bg-blue-600 data-[highlighted]:text-white font-bold text-base"
+                  >
+                    Auditor
+                  </SelectItem>
+                  <SelectItem
+                    value="implantation"
+                    className="cursor-pointer data-[highlighted]:bg-blue-600 data-[highlighted]:text-white font-bold text-base"
+                  >
+                    Implantação
+                  </SelectItem>
+                  <SelectItem
+                    value="feedback"
+                    className="cursor-pointer data-[highlighted]:bg-blue-600 data-[highlighted]:text-white font-bold text-base"
+                  >
+                    Feedback
+                  </SelectItem>
                 </SelectContent>
               </Select>
             </div>
 
             <div className="flex items-end">
-              <Button className="w-full bg-gradient-to-r from-blue-800 via-purple-600/50 to-purple-950">
+              <Button className="w-full h-[50px] font-bold text-base bg-gradient-to-r from-blue-800 via-purple-600/50 to-purple-950">
                 <FaUserGroup className="mr-2" />
-                Enviar convite
+                Cadastrar Usuário
               </Button>
             </div>
           </div>
         </CardContent>
 
         {/* PERMISSÕES */}
-        <CardContent className="mx-6 mb-6 rounded-2xl bg-slate-900/30 border border-zinc-500/55 py-6">
+        <CardContent className="mx-6 mb-6 rounded-2xl border border-blue-700/30 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 py-6">
           <div className="flex items-center gap-3 mb-4">
             <FiShield className="text-blue-600 text-2xl" />
-            <span className="text-xl text-white">
+            <span className="text-xl text-white font-bold">
               Permissões por Tipo de Acesso
             </span>
           </div>
 
-          <div className="grid grid-cols-3 gap-6">
+          <div className="grid grid-cols-4 gap-6">
             <div>
-              <h1 className="text-purple-500 font-bold text-lg">
+              <h1 className="text-purple-600 font-bold text-lg">
                 Administrador
               </h1>
-              <p className="text-zinc-400">Acesso total ao sistema</p>
+              <p className="text-zinc-400">
+                Controle total do sistema e gestão de usuários
+              </p>
             </div>
 
             <div>
-              <h1 className="text-blue-500 font-bold text-lg">Implantação</h1>
-              <p className="text-zinc-400">Dashboard + Implantação</p>
+              <h1 className="text-teal-600 font-bold text-lg">Auditor</h1>
+              <p className="text-zinc-400">
+                Visualização completa e exportação de dados
+              </p>
             </div>
 
             <div>
-              <h1 className="text-green-500 font-bold text-lg">Feedback CS</h1>
-              <p className="text-zinc-400">Dashboard + Feedback</p>
+              <h1 className="text-blue-600 font-bold text-lg">Implantação</h1>
+              <p className="text-zinc-400">
+                Acesso ao dashboard e processos de implantação
+              </p>
+            </div>
+
+            <div>
+              <h1 className="text-green-600 font-bold text-lg">Feedback CS</h1>
+              <p className="text-zinc-400">
+                Acesso ao dashboard e gestão de feedbacks
+              </p>
             </div>
           </div>
         </CardContent>

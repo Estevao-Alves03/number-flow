@@ -46,12 +46,12 @@ function App() {
                 </div>
             </div>
 
-            <div className="border border-slate-800 rounded-lg bg-slate-800">
+            <div className="border border-slate-800 rounded-lg bg-slate-800 hover:bg-slate-800/">
               <Popover>
-                <PopoverTrigger className="p-3"> <FaBell className="text-white"/></PopoverTrigger>
-                <PopoverContent className="w-96 p-4 mr-44 mt-4 bg-slate-800 text-white border-slate-700">
-                  <h2 className="font-bold ml-1.5 text-lg">Notificações</h2>
-                  <div className="flex flex-col items-center justify-center py-14 texto-zinc-400">
+                <PopoverTrigger className="p-3" title="Ver notificações"> <FaBell className="text-white" title="Ver notificações"/></PopoverTrigger>
+                <PopoverContent className="w-[500px] h-[350px] p-4 mr-44 mt-4 bg-slate-800 text-white border-slate-700">
+                  <h2 className="font-bold ml-1.5 text-xl mt-4">Notificações</h2>
+                  <div className="flex flex-col items-center justify-center pt-24 texto-zinc-400">
                     <FaRegBell className="text-5xl mb-2 opacity-40 text-zinc-500"/>
                     <span className="text-sm text-zinc-500">Nenhuma Notificação</span>
                   </div>

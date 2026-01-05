@@ -98,12 +98,8 @@ export default function LinkedWithSearch() {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             placeholder="Buscar empresa, implantador ou CNPJ"
-            className="
-              w-full rounded-lg py-4 pl-10 pr-3
-              bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 border border-blue-700/40
-              text-zinc-100 placeholder:text-zinc-500
-              focus:ring-2 focus:ring-blue-600
-            "
+             className="w-full rounded-lg py-4 pl-10 pr-3 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 border border-blue-700/40 text-zinc-100 placeholder:text-zinc-300 placeholder:text-base
+                focus:outline-none focus:ring-0 focus:border-blue-700/40"
           />
         </section>
       </div>
@@ -112,10 +108,10 @@ export default function LinkedWithSearch() {
       {linkedNumbers.length === 0 && (
         <div className="px-44 pt-10">
           <div className="rounded-xl border border-blue-700/30 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 py-16 text-center text-zinc-400">
-            <h2 className="text-xl font-semibold mb-2">
+            <h2 className="text-2xl font-semibold mb-2">
               Nenhum número vinculado
             </h2>
-            <p className="text-sm">
+            <p className="text-base">
               Ainda não existe nenhum número vinculado a uma empresa.
             </p>
           </div>
