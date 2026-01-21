@@ -8,11 +8,9 @@ import { default as PendingImplantion } from "./PendingImplantion";
 import { default as CompletedImplantation } from "./CompletedImplatation";
 import { default as NewDeployments } from "./NewDeployments";
 import { default as StalledDeployments } from "./StalledDeployments";
-import { useState } from "react";
 import { IoSearch } from "react-icons/io5";
 
 export default function Implantations() {
-  const [searchTerm, setSearchTerm] = useState("");
 
   return (
     <div className="px-44">
