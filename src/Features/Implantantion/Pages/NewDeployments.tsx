@@ -67,7 +67,7 @@ export default function NewDeployments() {
                   </span>
                 </div>
 
-                <div className="flex items-center gap-4 text-lg text-zinc-300">
+                <div className="flex items-center gap-4 text-lg font-medium text-zinc-300">
                   <span>{deployment.phone}</span>
                   <span>•</span>
                   <span>Vinculado: {deployment.dateNow}</span>

@@ -96,7 +96,7 @@ export default function PendingImplantion() {
                   </span>
                 </div>
 
-                <div className="flex items-center gap-4 text-lg text-zinc-300">
+                <div className="flex items-center gap-4 text-lg font-medium text-zinc-300">
                   <span>{item.phone}</span>
                   <span>•</span>
                   <span>Iniciado: {item.dateNow}</span>
@@ -138,17 +138,29 @@ export default function PendingImplantion() {
                       </h1>
 
                       <Select>
-                        <SelectTrigger className="w-[280px] h-[45px] bg-slate-900/500 border border-blue-700/40 text-zinc-100 rounded-lg font-bold text-base">
+                        <SelectTrigger className="w-[280px] h-[45px] bg-slate-900/500 border border-blue-700/40 text-zinc-100 rounded-lg font-bold text-lg">
                           <SelectValue placeholder="Escolha uma etapa" />
                         </SelectTrigger>
 
                         <SelectContent>
-                          <SelectItem value="GymbotTraining">Treinamento Gymbot</SelectItem>
-                          <SelectItem value="PromptAlignment">Alinhamento de prompt</SelectItem>
-                          <SelectItem value="AiUnderTest">IA em teste</SelectItem>
-                          <SelectItem value="Validation">1º Validação</SelectItem>
-                          <SelectItem value="Stopped">Parado</SelectItem>
-                          <SelectItem value="Conclusion">Conclusão</SelectItem>
+                          <SelectItem value="GymbotTraining"
+                          className="cursor-pointer data-[highlighted]:bg-blue-600 data-[highlighted]:text-white font-bold text-base"
+                          >Treinamento Gymbot</SelectItem>
+                          <SelectItem value="PromptAlignment"
+                          className="cursor-pointer data-[highlighted]:bg-blue-600 data-[highlighted]:text-white font-bold text-base"
+                          >Alinhamento de prompt</SelectItem>
+                          <SelectItem value="AiUnderTest"
+                          className="cursor-pointer data-[highlighted]:bg-blue-600 data-[highlighted]:text-white font-bold text-base"
+                          >IA em teste</SelectItem>
+                          <SelectItem value="Validation"
+                          className="cursor-pointer data-[highlighted]:bg-blue-600 data-[highlighted]:text-white font-bold text-base"
+                          >1º Validação</SelectItem>
+                          <SelectItem value="Stopped"
+                          className="cursor-pointer data-[highlighted]:bg-blue-600 data-[highlighted]:text-white font-bold text-base"
+                          >Parado</SelectItem>
+                          <SelectItem value="Conclusion"
+                          className="cursor-pointer data-[highlighted]:bg-blue-600 data-[highlighted]:text-white font-bold text-base"
+                          >Conclusão</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
@@ -160,8 +172,8 @@ export default function PendingImplantion() {
                       </h1>
 
                       <Textarea
-                        placeholder="Descreva em detalhes o que foi feito"
-                        className="h-[180px] border border-blue-700/40 bg-slate-950/10 text-zinc-200 text-xl font-bold px-5 py-5"
+                        placeholder="Descreva em detalhes o que foi feito."
+                        className="h-[180px] border border-blue-700/40 bg-slate-950/10 text-zinc-200 placeholder:text-xl font-bold px-5 py-5"
                       />
                     </div>
 

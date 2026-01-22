@@ -85,7 +85,7 @@ export default function CompletedImplantation() {
                   </span>
                 </div>
 
-                <div className="flex items-center gap-4 text-lg text-zinc-300">
+                <div className="flex items-center gap-4 text-lg font-medium text-zinc-300">
                   <span>{item.phone}</span>
                   <span>•</span>
                   <span>Iniciado: {item.startedAt}</span>
