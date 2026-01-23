@@ -30,6 +30,7 @@ interface Feedback {
   implementationDone: string;
   contactsMade: number;
   contact: string;
+  contactDay: number;
   dateNow: string;
   madeIn: string;
   crmCompleted: string;
@@ -45,23 +46,25 @@ const mockData: Feedback[] = [
     implementationDone: "19/01/2026",
     dateNow: "23/01/2026",
     contactsMade: 1,
+    contactDay: 3,
     contact: "3º dia",
     madeIn: "30/02/2026",
     crmCompleted: "20/03/2026",
   },
-  // {
-  //   id: 1,
-  //   nameGym: "Acad Acuas Fit",
-  //   state: "novo",
-  //   implementedBy: "rayck",
-  //   nextContactAt: "22/01/2026",
-  //   implementationDone: "19/01/2026",
-  //   dateNow: "23/01/2026",
-  //   contactsMade: 1,
-  //   contact: "3º dia",
-  //   madeIn: "30/02/2026",
-  //   crmCompleted: "20/03/2026",
-  // },
+  {
+    id: 2,
+    nameGym: "Acad Teste",
+    state: "novo",
+    implementedBy: "ellias",
+    nextContactAt: "22/01/2026",
+    implementationDone: "19/01/2026",
+    dateNow: "23/01/2026",
+    contactsMade: 1,
+    contactDay: 30,
+    contact: "30º dia",
+    madeIn: "30/02/2026",
+    crmCompleted: "20/03/2026",
+  },
 ];
 
 export default function PendingFeedback() {
@@ -120,111 +123,268 @@ export default function PendingFeedback() {
                     )}
                   </Button>
                 </div>
-               <div className="text-white px-4 grid grid-rows-3 gap-1.5">
+                <div className="text-white px-4 grid grid-rows-3 gap-1.5">
                   <section className="flex items-center gap-2">
                     <h2 className="font-semibold text-lg flex items-center gap-2">
                       <SlCalender />
                       Proximo contato:
                     </h2>
-                    <span className="text-zinc-300 mt-1">{feedback.nextContactAt}</span>
+                    <span className="text-zinc-300 mt-1">
+                      {feedback.nextContactAt}
+                    </span>
                   </section>
                   <section className="flex items-center gap-2">
                     <h2 className="font-semibold text-lg">Implantador:</h2>
-                    <span className="text-zinc-300 mt-1">{feedback.implementedBy}</span>
+                    <span className="text-zinc-300 mt-1">
+                      {feedback.implementedBy}
+                    </span>
                   </section>
                   <section className="flex items-center gap-2">
                     <h2 className="font-semibold text-lg">Concluido em:</h2>
-                    <span className="text-zinc-300 mt-1">{feedback.implementationDone}</span>
+                    <span className="text-zinc-300 mt-1">
+                      {feedback.implementationDone}
+                    </span>
                   </section>
                 </div>
               </>
             ) : (
               <>
-                <div className="px-5">
-                  <div className="flex items-start justify-between">
-                    <div className="space-y-2">
-                      <div className="flex items-center gap-3">
-                        <h2 className="text-3xl font-semibold text-white">
-                          {feedback.nameGym}
-                        </h2>
+                {feedback.contactDay === 30 ? (
+                  <>
+                    <div className="px-5">
+                      <div className="flex items-start justify-between">
+                        <div className="space-y-2">
+                          <div className="flex items-center gap-3">
+                            <h2 className="text-3xl font-semibold text-white">
+                              {feedback.nameGym}
+                            </h2>
 
-                        <span className="rounded-full bg-blue-900/70 px-4 py-1.5 text-lg font-bold text-white">
-                          Primeiro contato - 3º dia
-                        </span>
+                            <span className="rounded-full bg-blue-900/70 px-4 py-1.5 text-lg font-bold text-white">
+                              Primeiro contato - 3º dia
+                            </span>
+                          </div>
+
+                          <div className="text-white  grid grid-rows-2 gap-1.5">
+                            <section className="flex items-center gap-2">
+                              <h2 className="font-semibold text-lg flex items-center gap-2">
+                                <SlCalender />
+                                Iniciando contato:
+                              </h2>
+                              <span className="text-zinc-300 mt-1">
+                                {feedback.dateNow}
+                              </span>
+                            </section>
+                            <section className="flex items-center gap-2">
+                              <h2 className="font-semibold text-lg">
+                                Implantador:
+                              </h2>
+                              <span className="text-zinc-300 mt-1">
+                                {feedback.implementedBy}
+                              </span>
+                            </section>
+                          </div>
+                        </div>
+
+                        <Button
+                          onClick={() => toggleCard(feedback.id)}
+                          className="text-white font-bold rounded-lg text-lg py-5 px-4 bg-violet-700/90 hover:bg-violet-900/90"
+                        >
+                          <FiChevronsUp className="!w-6 !h-6" />
+                        </Button>
                       </div>
+                      <hr className="border-violet-700/45 mt-7 mb-10" />
 
-                      <div className="text-white  grid grid-rows-2 gap-1.5">
-                        <section className="flex items-center gap-2">
-                          <h2 className="font-semibold text-lg flex items-center gap-2">
-                            <SlCalender />
-                            Iniciando contato:
-                          </h2>
-                          <span className="text-zinc-300 mt-1">{feedback.dateNow}</span>
-                        </section>
-                        <section className="flex items-center gap-2">
-                          <h2 className="font-semibold text-lg">Implantador:</h2>
-                          <span className="text-zinc-300 mt-1">{feedback.implementedBy}</span>
-                        </section>
+                      <div className="rounded-xl border-4 border-violet-600/90 bg-slate-900/500 shador-md px-6 py-5">
+                        <div>
+                          <section className="text-white flex items-center gap-3 text-2xl font-bold pb-10">
+                            <MdAdd className="text-3xl text-blue-600" />
+                            Adicione as informações sobre a satisfacação do
+                            cliente
+                          </section>
+                        </div>
+                        <div>
+                          <div className="grid grid-cols-3 gap-4">
+                            <section>
+                              <h1 className="flex font-bold items-center gap-2 text-white text-xl mb-4">
+                                <MdThumbUpOffAlt className="text-xl w-6 h-6 text-green-700" />
+                                Pontos positivos
+                              </h1>
+                              <Input className="text-zinc-300 !rounded-lg bg-slate-800/10 !text-lg border-slate-600 !px-3 !py-5" />
+                            </section>
+                            <section>
+                              <h1 className="flex font-bold items-center gap-2 text-white text-xl mb-4">
+                                <MdThumbDownOffAlt className="text-xl w-6 h-6 text-red-700" />
+                                Pontos negativos
+                              </h1>
+                              <Input className="text-zinc-300 !rounded-lg bg-slate-800/10 !text-lg border-slate-600 !px-3 !py-5" />
+                            </section>
+                            <section>
+                              <h1 className="flex font-bold items-center gap-2 text-white text-xl mb-4">
+                                <FaRegLightbulb className="text-xl w-6 h-6 text-blue-700" />
+                                Sugestões
+                              </h1>
+                              <Input className="text-zinc-300 !rounded-lg bg-slate-800/10 !text-lg border-slate-600 !px-3 !py-5" />
+                            </section>
+                          </div>
+                          <div className="mt-16">
+                            <h1 className="flex items-center font-bold gap-2 text-white text-xl  mb-4 mt-6">
+                              <FiMessageSquare />
+                              Comentários Gerais
+                            </h1>
+                            <Textarea
+                              placeholder="Coloque as informações de forma mais detalhada de como foi a conversa com o cliente"
+                              className="h-[180px] !rounded-lg border border-slate-700 bg-slate-800/10 text-zinc-200 !text-xl !font-bold !placeholder:text-xl px-5 py-5"
+                            />
+                          </div>
+                          <div className="grid grid-cols-3 gap-3 mt-8">
+                            <section className="">
+                              <h1 className="text-xl font-bold text-white">
+                                Satisfação com o produto:
+                              </h1>
+                              <section className="flex items-center gap-2 text-4xl mt-2 mb-2">
+                                <LiaStarSolid className="text-zinc-500" />
+                                <LiaStarSolid className="text-zinc-500" />
+                                <LiaStarSolid className="text-zinc-500" />
+                                <LiaStarSolid className="text-zinc-500" />
+                                <LiaStarSolid className="text-zinc-500" />
+                              </section>
+                            </section>
+                            <section className="">
+                              <h1 className="text-xl font-bold text-white">
+                                Satisfação com a implantação:
+                              </h1>
+                              <section className="flex items-center gap-2 text-4xl mt-2 mb-2">
+                                <LiaStarSolid className="text-zinc-500" />
+                                <LiaStarSolid className="text-zinc-500" />
+                                <LiaStarSolid className="text-zinc-500" />
+                                <LiaStarSolid className="text-zinc-500" />
+                                <LiaStarSolid className="text-zinc-500" />
+                              </section>
+                            </section>
+                            <section className="">
+                              <h1 className="text-xl font-bold text-white">
+                                Cliente recomendaria o produto?
+                              </h1>
+                              <div className="flex items-center gap-4">
+                                <section className="flex items-center gap-2 text-4xl mt-2 mb-2">
+                                  <Checkbox className="rounded-lg border-zinc-400 w-6 h-6" />
+                                  <Label className="text-green-500 text-xl font-bold">
+                                    Sim, Recomendaria!
+                                  </Label>
+                                </section>
+                                <section className="flex items-center gap-2 text-4xl mt-2 mb-2">
+                                  <Checkbox className="rounded-lg border-zinc-400 w-6 h-6" />
+                                  <Label className="text-red-500 text-xl font-bold">
+                                    Não Recomendaria.
+                                  </Label>
+                                </section>
+                              </div>
+                            </section>
+                          </div>
+                          <Button className="rounded-xl flex items-center gap-2 mt-6 bg-green-600/70 py-6 hover:bg-green-800/70 text-xl !font-bold">
+                            <FiCheckCircle className="!w-6 !h-6 text-white" />
+                            Concluir acompanhamento
+                          </Button>
+                        </div>
                       </div>
                     </div>
+                  </>
+                ) : (
+                  <>
+                    <div className="px-5">
+                      <div className="flex items-start justify-between">
+                        <div className="space-y-2">
+                          <div className="flex items-center gap-3">
+                            <h2 className="text-3xl font-semibold text-white">
+                              {feedback.nameGym}
+                            </h2>
 
-                    <Button
-                      onClick={() => toggleCard(feedback.id)}
-                      className="text-white font-bold rounded-lg text-lg py-5 px-4 bg-violet-700/90 hover:bg-violet-900/90"
-                    >
-                      <FiChevronsUp className="!w-6 !h-6" />
-                    </Button>
-                  </div>
-                  <hr className="border-violet-700/45 mt-7 mb-10" />
+                            <span className="rounded-full bg-blue-900/70 px-4 py-1.5 text-lg font-bold text-white">
+                              Primeiro contato - 3º dia
+                            </span>
+                          </div>
 
-                  <div className="rounded-xl border-4 border-violet-600/90 bg-slate-900/500 shador-md px-6 py-5">
-                    <div>
-                      <section className="text-white flex items-center gap-3 text-2xl font-bold pb-10">
-                        <MdAdd className="text-3xl text-blue-600" />
-                        Adicione as informações sobre a satisfacação do cliente
-                      </section>
-                    </div>
-                    <div>
-                      <div className="grid grid-cols-3 gap-4">
-                        <section>
-                          <h1 className="flex font-bold items-center gap-2 text-white text-xl mb-4">
-                            <MdThumbUpOffAlt className="text-xl w-6 h-6 text-green-700" />
-                            Pontos positivos
-                          </h1>
-                          <Input className="text-zinc-300 !rounded-lg bg-slate-800/10 !text-lg border-slate-600 !px-3 !py-5" />
-                        </section>
-                        <section>
-                          <h1 className="flex font-bold items-center gap-2 text-white text-xl mb-4">
-                            <MdThumbDownOffAlt className="text-xl w-6 h-6 text-red-700" />
-                            Pontos negativos
-                          </h1>
-                          <Input className="text-zinc-300 !rounded-lg bg-slate-800/10 !text-lg border-slate-600 !px-3 !py-5" />
-                        </section>
-                        <section>
-                          <h1 className="flex font-bold items-center gap-2 text-white text-xl mb-4">
-                            <FaRegLightbulb className="text-xl w-6 h-6 text-blue-700" />
-                            Sugestões
-                          </h1>
-                          <Input className="text-zinc-300 !rounded-lg bg-slate-800/10 !text-lg border-slate-600 !px-3 !py-5" />
-                        </section>
+                          <div className="text-white  grid grid-rows-2 gap-1.5">
+                            <section className="flex items-center gap-2">
+                              <h2 className="font-semibold text-lg flex items-center gap-2">
+                                <SlCalender />
+                                Iniciando contato:
+                              </h2>
+                              <span className="text-zinc-300 mt-1">
+                                {feedback.dateNow}
+                              </span>
+                            </section>
+                            <section className="flex items-center gap-2">
+                              <h2 className="font-semibold text-lg">
+                                Implantador:
+                              </h2>
+                              <span className="text-zinc-300 mt-1">
+                                {feedback.implementedBy}
+                              </span>
+                            </section>
+                          </div>
+                        </div>
+
+                        <Button
+                          onClick={() => toggleCard(feedback.id)}
+                          className="text-white font-bold rounded-lg text-lg py-5 px-4 bg-violet-700/90 hover:bg-violet-900/90"
+                        >
+                          <FiChevronsUp className="!w-6 !h-6" />
+                        </Button>
                       </div>
-                      <div className="mt-16">
-                        <h1 className="flex items-center font-bold gap-2 text-white text-xl  mb-4 mt-6">
-                          <FiMessageSquare />
-                          Comentários Gerais
-                        </h1>
-                        <Textarea
-                          placeholder="Coloque as informações de forma mais detalhada de como foi a conversa com o cliente"
-                          className="h-[180px] !rounded-lg border border-slate-700 bg-slate-800/10 text-zinc-200 !text-xl !font-bold !placeholder:text-xl px-5 py-5"
-                        />
+                      <hr className="border-violet-700/45 mt-7 mb-10" />
+
+                      <div className="rounded-xl border-4 border-violet-600/90 bg-slate-900/500 shador-md px-6 py-5">
+                        <div>
+                          <section className="text-white flex items-center gap-3 text-2xl font-bold pb-10">
+                            <MdAdd className="text-3xl text-blue-600" />
+                            Adicione as informações sobre a satisfacação do
+                            cliente
+                          </section>
+                        </div>
+                        <div>
+                          <div className="grid grid-cols-3 gap-4">
+                            <section>
+                              <h1 className="flex font-bold items-center gap-2 text-white text-xl mb-4">
+                                <MdThumbUpOffAlt className="text-xl w-6 h-6 text-green-700" />
+                                Pontos positivos
+                              </h1>
+                              <Input className="text-zinc-300 !rounded-lg bg-slate-800/10 !text-lg border-slate-600 !px-3 !py-5" />
+                            </section>
+                            <section>
+                              <h1 className="flex font-bold items-center gap-2 text-white text-xl mb-4">
+                                <MdThumbDownOffAlt className="text-xl w-6 h-6 text-red-700" />
+                                Pontos negativos
+                              </h1>
+                              <Input className="text-zinc-300 !rounded-lg bg-slate-800/10 !text-lg border-slate-600 !px-3 !py-5" />
+                            </section>
+                            <section>
+                              <h1 className="flex font-bold items-center gap-2 text-white text-xl mb-4">
+                                <FaRegLightbulb className="text-xl w-6 h-6 text-blue-700" />
+                                Sugestões
+                              </h1>
+                              <Input className="text-zinc-300 !rounded-lg bg-slate-800/10 !text-lg border-slate-600 !px-3 !py-5" />
+                            </section>
+                          </div>
+                          <div className="mt-16">
+                            <h1 className="flex items-center font-bold gap-2 text-white text-xl  mb-4 mt-6">
+                              <FiMessageSquare />
+                              Comentários Gerais
+                            </h1>
+                            <Textarea
+                              placeholder="Coloque as informações de forma mais detalhada de como foi a conversa com o cliente"
+                              className="h-[180px] !rounded-lg border border-slate-700 bg-slate-800/10 text-zinc-200 !text-xl !font-bold !placeholder:text-xl px-5 py-5"
+                            />
+                          </div>
+                          <Button className="rounded-xl flex items-center gap-2 mt-10 bg-blue-900/70 py-6 hover:bg-blue-800/70 text-xl !font-bold">
+                            <MdAdd className="!w-6 !h-6 text-white" />
+                            Salvar Anotação
+                          </Button>
+                        </div>
                       </div>
-                      <Button className="rounded-xl flex items-center gap-2 mt-10 bg-blue-900/70 py-6 hover:bg-blue-800/70 text-xl !font-bold">
-                        <MdAdd className="!w-6 !h-6 text-white" />
-                        Salvar Anotação
-                      </Button>
                     </div>
-                  </div>
-                </div>
+                  </>
+                )}
               </>
             )}
           </Card>
