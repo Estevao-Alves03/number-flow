@@ -129,20 +129,36 @@ export default function ProgressFeedback() {
           <div className="text-white flex justify-between px-4 pb-2">
             <h1 className="text-3xl font-bold flex gap-3">
               {feedback.nameGym}
-              <span className="rounded-full bg-blue-900/70 px-3 py-1 text-lg">
+              <span className="rounded-full bg-blue-900/70 px-4 py-1.5 text-lg font-bold text-white">
                 {feedback.contact}
               </span>
             </h1>
           </div>
 
           {/* Info */}
-          <div className="text-white px-4 grid gap-1">
-            <section className="flex gap-2">
-              <SlCalender /> Próximo contato: {feedback.nextContactAt}
-            </section>
-            <section>Implantador: {feedback.implementedBy}</section>
-            <section>Concluído em: {feedback.implementationDone}</section>
-          </div>
+           <div className="text-white px-4 grid grid-rows-3 gap-1.5">
+                  <section className="flex items-center gap-2">
+                    <h2 className="font-semibold text-lg flex items-center gap-2">
+                      <SlCalender />
+                      Proximo contato:
+                    </h2>
+                    <span className="text-zinc-300 mt-1">
+                      {feedback.nextContactAt}
+                    </span>
+                  </section>
+                  <section className="flex items-center gap-2">
+                    <h2 className="font-semibold text-lg">Implantador:</h2>
+                    <span className="text-zinc-300 mt-1">
+                      {feedback.implementedBy}
+                    </span>
+                  </section>
+                  <section className="flex items-center gap-2">
+                    <h2 className="font-semibold text-lg">Concluido em:</h2>
+                    <span className="text-zinc-300 mt-1">
+                      {feedback.implementationDone}
+                    </span>
+                  </section>
+                </div>
 
           <hr className="my-5 border-slate-800" />
 

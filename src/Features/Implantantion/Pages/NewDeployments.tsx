@@ -34,7 +34,7 @@ export default function NewDeployments() {
   return (
     <div className="mt-7 pb-24">
       {deployments.length === 0 && (
-        <div className="rounded-xl border-2 border-blue-700/30 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 p-20 text-center text-zinc-400 mb-6">
+        <div className="rounded-xl border-4 border-blue-700/30 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 p-20 text-center text-zinc-400 mb-6">
           <div className="flex flex-col items-center gap-2">
             <TbPlus className="text-6xl text-zinc-600" />
             <h1 className="text-2xl font-semibold mt-6">
@@ -52,7 +52,7 @@ export default function NewDeployments() {
         {deployments.map((deployment) => (
           <Card
             key={deployment.id}
-            className="w-full mb-5 rounded-xl border border-blue-700/30 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 px-6 py-5 shadow-md"
+            className="w-full mb-5 rounded-xl border-4 border-blue-700 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 px-6 py-5 shadow-md"
           >
             <div className="flex items-start justify-between ">
               {/* Lado esquerdo */}

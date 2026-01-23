@@ -60,7 +60,7 @@ export default function PendingImplantion() {
 
   if (deployments.length === 0) {
     return (
-      <div className="rounded-xl border-2 border-blue-700/30 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 p-20 text-center text-zinc-400 mb-6">
+      <div className="rounded-xl border-4 border-blue-700/30 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 p-20 text-center text-zinc-400 mb-6">
         <div className="flex flex-col items-center gap-2">
           <TbClock className="text-6xl text-zinc-600" />
           <h1 className="text-2xl font-semibold mt-6">
@@ -82,7 +82,7 @@ export default function PendingImplantion() {
         return (
           <Card
             key={item.id}
-            className="w-full rounded-xl border border-blue-700/30 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 px-6 py-5 shadow-md"
+            className="w-full rounded-xl border-4 border-blue-700 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 px-6 py-5 shadow-md"
           >
             {/* HEADER (sempre visível) */}
             <div className="flex items-start justify-between">
@@ -122,7 +122,7 @@ export default function PendingImplantion() {
               <>
                 <hr className="border-slate-700/45 mt-7 mb-16" />
 
-                <Card className="rounded-xl border border-blue-700/30 bg-slate-900/500">
+                <Card className="rounded-xl border-2 border-blue-700 bg-slate-900/500">
                   <CardHeader>
                     <CardTitle className="text-white flex items-center gap-3 text-2xl font-bold">
                       <MdAdd className="text-3xl text-blue-600" />
@@ -138,7 +138,7 @@ export default function PendingImplantion() {
                       </h1>
 
                       <Select>
-                        <SelectTrigger className="w-[280px] h-[45px] bg-slate-900/500 border border-blue-700/40 text-zinc-100 rounded-lg font-bold text-lg">
+                        <SelectTrigger className="w-[280px] h-[45px] bg-slate-900/500 border-2 border-blue-700 text-zinc-100 rounded-lg font-bold text-lg">
                           <SelectValue placeholder="Escolha uma etapa" />
                         </SelectTrigger>
 
@@ -173,7 +173,7 @@ export default function PendingImplantion() {
 
                       <Textarea
                         placeholder="Descreva em detalhes o que foi feito."
-                        className="h-[180px] border border-blue-700/40 bg-slate-950/10 text-zinc-200 placeholder:text-xl font-bold px-5 py-5"
+                        className="h-[180px] border-2 border-blue-700 bg-slate-950/10 text-zinc-200 placeholder:text-xl font-bold px-5 py-5"
                       />
                     </div>
 

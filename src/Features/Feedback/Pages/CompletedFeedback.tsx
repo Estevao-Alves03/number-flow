@@ -3,10 +3,63 @@ import { LiaStarSolid } from "react-icons/lia";
 import { FiCheckCircle } from "react-icons/fi";
 import { Button } from "../../../components/ui/button";
 import { Card } from "../../../components/ui/card";
+import { useState } from "react";
+
+
+interface Feedback {
+  id: number;
+  nameGym: string;
+  state: string;
+  implementedBy: string;
+  nextContactAt: string;
+  implementationDone: string;
+  contactsMade: number;
+  contact: string;
+  dateNow: string;
+  madeIn: string;
+  crmCompleted: string;
+}
+
+const mockData: Feedback[] = [
+  {
+    id: 1,
+    nameGym: "Acad Acuas Fit",
+    state: "novo",
+    implementedBy: "rayck",
+    nextContactAt: "22/01/2026",
+    implementationDone: "19/01/2026",
+    dateNow: "23/01/2026",
+    contactsMade: 1,
+    contact: "3º dia",
+    madeIn: "30/02/2026",
+    crmCompleted: "20/03/2026",
+  },
+  // {
+  //   id: 1,
+  //   nameGym: "Acad Acuas Fit",
+  //   state: "novo",
+  //   implementedBy: "rayck",
+  //   nextContactAt: "22/01/2026",
+  //   implementationDone: "19/01/2026",
+  //   dateNow: "23/01/2026",
+  //   contactsMade: 1,
+  //   contact: "3º dia",
+  //   madeIn: "30/02/2026",
+  //   crmCompleted: "20/03/2026",
+  // },
+];
 
 export default function CompletedFeedback() {
-  return (
-    <div>
+
+  const [feedbacks] = useState<Feedback[]>(mockData)
+  const [openId, setOpenId] = useState<number | null>(null)
+
+  function toggleCard(id: number){
+    setOpenId((prev) => (prev === id ? null : id))
+  }
+
+  if(feedbacks.length === 0){
+    return(
       <div className="rounded-xl border-2 border-violet-700/30 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 p-20 text-center text-zinc-400 mb-6">
         <div className="flex flex-col items-center gap-2">
           <FiCheckCircle className="text-6xl text-zinc-600" />
@@ -21,69 +74,42 @@ export default function CompletedFeedback() {
           </p>
         </div>
       </div>
+    )
+  }
 
-      {/* card fechado */}
-      <Card className="w-full mb-5 rounded-xl border border-violet-700 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 px-6 py-5 shadow-md">
-        <div className="flex items-start justify-between">
-          <div className="space-y-2 mt-3 p-2 ">
-            <div className="flex items-center gap-3">
-              <h2 className="text-3xl font-semibold text-white">
-                Acad Acuas Fit
-              </h2>
+  return (
+   <div>
+    {feedbacks.map((feedback) => {
+      const isOpen = openId === feedback.id
 
-              <span className="rounded-full bg-green-500/20 px-4 py-1.5 text-lg font-bold text-white">
-                Concluída
-              </span>
-            </div>
-
-            <div className="flex items-center gap-4 text-lg text-zinc-300">
-              <span>(34) 24423-4342</span>
-              <span>•</span>
-              <span>Iniciado: 16/12/2025</span>
-              <span>•</span>
-              <span>Concluído em: 24/12/2025</span>
-              <span>•</span>
-              <span>8 anotações</span>
-            </div>
-          </div>
-
-          <Button className="mt-4 text-white font-bold rounded-lg text-lg py-5 px-4 flex items-center gap-2 bg-violet-700/90 hover:bg-violet-900/90">
-            <FiChevronsDown className="!w-6 !h-6" />
-          </Button>
-        </div>
-        <hr className="border-slate-700/45 mt-7 mb-2" />
-      </Card>
-
-      {/* card aberto */}
-      <Card className="w-full rounded-xl border border-violet-700 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 px-6 py-5 shadow-md">
+      return(
+        <>
+         {/* card aberto */}
+      <div className="w-full mb-4 px-7 py-7 rounded-xl bg-white  border-4 border-violet-600/90 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 shadow-md">
         <div className="flex items-start justify-between">
           <div className="space-y-2 mt-3 p-2">
             <div className="flex items-center gap-3">
               <h2 className="text-3xl font-semibold text-white">
-                Acad Acuas Fit
+                {feedback.nameGym}
               </h2>
 
-              <span className="rounded-full bg-green-500/20 px-4 py-1.5 text-lg font-bold text-white">
-                Concluída
+              <span className="rounded-full bg-green-900/70 px-4 py-1.5 text-lg font-bold text-white">
+                {feedback.state}
               </span>
             </div>
 
-            <div className="flex items-center gap-4 text-lg text-zinc-300">
-              <span>(34) 24423-4342</span>
-              <span>•</span>
-              <span>Iniciado: 16/12/2025</span>
-              <span>•</span>
-              <span>Concluído em: 24/12/2025</span>
-              <span>•</span>
-              <span>8 anotações</span>
-            </div>
+            
           </div>
 
         <Button className="mt-4 text-white font-bold rounded-lg text-lg py-5 px-4 flex items-center gap-2 bg-violet-700/90 hover:bg-violet-900/90">
             <FiChevronsUp className="!w-6 !h-6" />
           </Button>
         </div>
+
+        
         <hr className="border-slate-700/45 mt-7 mb-5" />
+
+
         <div className="max-h-[450px] overflow-y-auto pb-6">
           <div className="text-white text-2xl flex items-center gap-2 px-5 pt-4">
             <FiRefreshCcw className="text-green-600" />
@@ -142,211 +168,11 @@ export default function CompletedFeedback() {
               </span>
             </section>
           </div>
-
-          <div className="border border-violet-700/90  bg-slate-900/50 shador-md mx-6 mt-5 rounded-lg">
-            <div className="px-8 pt-6 pb-4 flex justify-between">
-              <span className="text-xl font-bold px-4 py-1 bg-purple-700/55 text-white rounded-xl ">
-                7 dia
-              </span>
-              <span className="text-xl text-zinc-200 font-semibold font-sans">
-                19/12/2025 - 15:12
-              </span>
-            </div>
-            <p className="px-8 mb-4 text-lg font-semibold text-zinc-300   ">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of
-              Lorem Ipsum.
-            </p>
-            <section className="px-8 mb-4 text-base font-medium flex flex-wrap gap-3">
-              <span className="px-3 py-1 bg-green-500/20 text-green-400 rounded-full">
-                Atendimento simultâneo a vários clientes
-              </span>
-              <span className="px-3 py-1 bg-green-500/20 text-green-400 rounded-full">
-                Redução de custos operacionais
-              </span>
-              <span className="px-3 py-1 bg-green-500/20 text-green-400 rounded-full">
-                Respostas consistentes e sem erros humanos
-              </span>
-
-              <span className="px-3 py-1 bg-red-500/20 text-red-400 rounded-full">
-                Pode gerar respostas genéricas
-              </span>
-              <span className="px-3 py-1 bg-red-500/20 text-red-400 rounded-full">
-                Necessita revisão periódica
-              </span>
-              <span className="px-3 py-1 bg-red-500/20 text-red-400 rounded-full">
-                Limitações em linguagem informal
-              </span>
-
-              <span className="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full">
-                Treinar com conversas reais
-              </span>
-              <span className="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full">
-                Ajustar tom conforme público
-              </span>
-              <span className="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full">
-                Criar respostas mais naturais
-              </span>
-            </section>
-          </div>
-
-          <div className="border border-violet-700/90 bg-slate-900/50 shador-md mx-6 mt-5 rounded-lg">
-            <div className="px-8 pt-6 pb-4 flex justify-between">
-              <span className="text-xl font-bold px-4 py-1 bg-purple-700/55 text-white rounded-xl ">
-                15 dia
-              </span>
-              <span className="text-xl text-zinc-200 font-semibold font-sans">
-                20/12/2025 - 10:24
-              </span>
-            </div>
-            <p className="px-8 mb-4 text-lg font-semibold text-zinc-300   ">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of
-              Lorem Ipsum.
-            </p>
-            <section className="px-8 mb-4 text-base font-medium flex flex-wrap gap-3">
-              <span className="px-3 py-1 bg-green-500/20 text-green-400 rounded-full">
-                Escalável conforme crescimento da empresa
-              </span>
-              <span className="px-3 py-1 bg-green-500/20 text-green-400 rounded-full">
-                Diminui filas no atendimento
-              </span>
-              <span className="px-3 py-1 bg-green-500/20 text-green-400 rounded-full">
-                Disponível em horários fora do comercial
-              </span>
-
-              <span className="px-3 py-1 bg-red-500/20 text-red-400 rounded-full">
-                Respostas dependem da base de dados
-              </span>
-              <span className="px-3 py-1 bg-red-500/20 text-red-400 rounded-full">
-                Pode não captar emoções do cliente
-              </span>
-              <span className="px-3 py-1 bg-red-500/20 text-red-400 rounded-full">
-                Curva inicial de adaptação
-              </span>
-
-              <span className="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full">
-                Melhorar análise de sentimento
-              </span>
-              <span className="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full">
-                Criar alertas para atendimento humano
-              </span>
-              <span className="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full">
-                Expandir suporte multilíngue
-              </span>
-            </section>
-          </div>
-
-          <div className="border border-violet-700/90 bg-slate-900/50 shador-md mx-6 mt-5 rounded-lg">
-            <div className="px-8 pt-6 pb-4 flex justify-between">
-              <span className="text-xl font-bold px-4 py-1 bg-purple-700/55 text-white rounded-xl ">
-                30 dia
-              </span>
-              <span className="text-xl text-zinc-200 font-semibold font-sans">
-                21/12/2025 - 14:12
-              </span>
-            </div>
-            <p className="px-8 mb-4 text-lg font-semibold text-zinc-300   ">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of
-              Lorem Ipsum.
-            </p>
-            <section className="px-8 mb-4 text-base font-medium flex flex-wrap gap-3">
-              <span className="px-3 py-1 bg-green-500/20 text-green-400 rounded-full">
-                Padroniza a comunicação da marca
-              </span>
-              <span className="px-3 py-1 bg-green-500/20 text-green-400 rounded-full">
-                Diminui erros no repasse de informações
-              </span>
-              <span className="px-3 py-1 bg-green-500/20 text-green-400 rounded-full">
-                Facilita o acompanhamento de leads
-              </span>
-
-              <span className="px-3 py-1 bg-red-500/20 text-red-400 rounded-full">
-                Requer ajustes frequentes de contexto
-              </span>
-              <span className="px-3 py-1 bg-red-500/20 text-red-400 rounded-full">
-                Pode frustrar clientes mais exigentes
-              </span>
-              <span className="px-3 py-1 bg-red-500/20 text-red-400 rounded-full">
-                Limitações em negociações complexas
-              </span>
-
-              <span className="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full">
-                Criar fluxos personalizados por setor
-              </span>
-              <span className="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full">
-                Integrar relatórios de desempenho
-              </span>
-              <span className="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full">
-                Aprimorar entendimento de intenção
-              </span>
-            </section>
-            <div className="px-8 pt-6 pb-4 flex justify-between">
-              <span className="text-xl font-bold px-2 py-1 bg-purple-700/55 text-white rounded-lg ">
-                Considerações finais
-              </span>
-            </div>
-            <section className="px-8 py-4 grid grid-cols-3 gap-4 text-white">
-              <div>
-                <h1 className="text-2xl font-medium">
-                  Satisfação com o produto:
-                </h1>
-                <section className="flex items-center gap-2 text-4xl mt-2 mb-2">
-                  <LiaStarSolid className="text-yellow-500" />
-                  <LiaStarSolid className="text-yellow-500" />
-                  <LiaStarSolid className="text-yellow-500" />
-                  <LiaStarSolid className="text-yellow-500" />
-                  <LiaStarSolid className="" />
-                </section>
-              </div>
-
-              <div>
-                <h1 className="text-2xl font-medium">
-                  Satisfação com a implantação:
-                </h1>
-                <section className="flex items-center gap-2 text-4xl mt-2 mb-2">
-                  <LiaStarSolid className="text-yellow-500" />
-                  <LiaStarSolid className="text-yellow-500" />
-                  <LiaStarSolid className="text-yellow-500" />
-                  <LiaStarSolid className="text-yellow-500" />
-                  <LiaStarSolid className="text-yellow-500" />
-                </section>
-              </div>
-
-              <div>
-                <h1 className="text-2xl font-medium">
-                  O cliente recomendaria o produto?
-                </h1>
-                <h1 className="text-2xl text-green-500 font-medium mt-2">
-                  Sim, recomendaria!
-                </h1>
-              </div>
-            </section>
-          </div>
         </div>
-      </Card>
-    </div>
+      </div>
+        </>
+      )
+    })}
+   </div>
   );
 }

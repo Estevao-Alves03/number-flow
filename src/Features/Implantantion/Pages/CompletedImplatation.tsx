@@ -48,7 +48,7 @@ export default function CompletedImplantation() {
 
   if (deployments.length === 0) {
     return (
-      <div className="rounded-xl border-2 border-blue-700/30 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 p-20 text-center text-zinc-400 mb-6">
+      <div className="rounded-xl border-4 border-blue-700/30 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 p-20 text-center text-zinc-400 mb-6">
         <div className="flex flex-col items-center gap-2">
           <FiCheckCircle className="text-6xl text-zinc-600" />
 
@@ -71,7 +71,7 @@ export default function CompletedImplantation() {
         return (
           <Card 
           key={item.id}
-          className="w-full rounded-xl border border-blue-700/30 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 px-6 py-5 shadow-md">
+          className="w-full rounded-xl border-4 border-blue-700 bg-gradient-to-br from-slate-950 via-slate-900/500 to-slate-950 px-6 py-5 shadow-md">
             <div className="flex items-start justify-between">
               {/* Lado esquerdo */}
               <div className="space-y-2 mt-3 p-2">
@@ -116,7 +116,7 @@ export default function CompletedImplantation() {
                     <FiRefreshCcw className="text-green-600" />
                     <h1>Histórico de Anotações</h1>
                   </div>
-                  <Card className="border border-blue-700/30 bg-slate-900/50 shador-md mx-6 mt-5 rounded-lg">
+                  <Card className="border-2 border-blue-700 bg-slate-900/50 shador-md mx-6 mt-5 rounded-lg">
                     <div className="px-8 pt-6 pb-4 flex justify-between">
                       <span className="text-lg font-bold px-4 py-1.5 bg-blue-700/55 text-white rounded-xl ">
                         Treinamento Gymbot
@@ -140,7 +140,7 @@ export default function CompletedImplantation() {
                     </p>
                   </Card>
 
-                  <Card className="border border-blue-700/30 bg-slate-900/50 shador-md mx-6 mt-5 rounded-lg">
+                  <Card className="border-2 border-blue-700 bg-slate-900/50 shador-md mx-6 mt-5 rounded-lg">
                     <div className="px-8 pt-6 pb-4 flex justify-between">
                       <span className="text-lg font-bold px-4 py-1.5 bg-blue-700/55 text-white rounded-xl ">
                         Alinhamento de prompt
@@ -164,7 +164,7 @@ export default function CompletedImplantation() {
                     </p>
                   </Card>
 
-                  <Card className="border border-blue-700/30 bg-slate-900/50 shador-md mx-6 mt-5 rounded-lg">
+                  <Card className="border-2 border-blue-700 bg-slate-900/50 shador-md mx-6 mt-5 rounded-lg">
                     <div className="px-8 pt-6 pb-4 flex justify-between">
                       <span className="text-lg font-bold px-4 py-1.5 bg-blue-700/55 text-white rounded-xl ">
                         IA em teste
@@ -187,7 +187,7 @@ export default function CompletedImplantation() {
                       Ipsum.
                     </p>
                   </Card>
-                  <Card className="border border-blue-700/30 bg-slate-900/50 shador-md mx-6 mt-5 rounded-lg">
+                  <Card className="border-2 border-blue-700 bg-slate-900/50 shador-md mx-6 mt-5 rounded-lg">
                     <div className="px-8 pt-6 pb-4 flex justify-between">
                       <span className="text-lg font-bold px-4 py-1.5 bg-blue-700/55 text-white rounded-xl ">
                         Conclusao
